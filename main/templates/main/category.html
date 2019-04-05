@@ -1,0 +1,17 @@
+{% extends "main/header.html" %}
+
+{% block content %}
+	<div class="row" dir="rtl">
+		{% for idea, partone in part_ones.items %}
+		    <div class="col s12 m6 14">
+		    	<a href="{{partone}}",style="color:#000">
+		    		<div class="card hoverable">
+		    			<div class="card-content">
+		    				<div class="card-title">{{idea.idea_series}}</div>
+		    				<p dir="ltr">{{idea.series_summary}}</p>
+		    			</div>
+		    		</div>
+		    </div>
+	    {% endfor %}
+	</div>
+{% endblock %}       

@@ -1,0 +1,69 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-04-03 01:56+0430\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: main/models.py:24
+msgid "Categories"
+msgstr "دسته بندی ها"
+
+#: main/models.py:36 main/models.py:49
+msgid "Series"
+msgstr "زیر دسته ها"
+
+#: main/models.py:45
+msgid "Title"
+msgstr "عنوان"
+
+#: main/models.py:46
+msgid "Content"
+msgstr "محتوا"
+
+#: main/models.py:47
+msgid "date published"
+msgstr "زمان انتشار"
+
+#: main/models.py:50
+msgid "url"
+msgstr "آدرس اینترنتی"
+
+#: main/models.py:51
+#, fuzzy
+#| msgid "date published"
+msgid "Publisher"
+msgstr "نگارنده"
+
+#: main/models.py:54
+msgid "My idea"
+msgstr "نوشته های من"
+
+#: main/views.py:26
+msgid "New Account Created: "
+msgstr "حساب کاربری شما ساخته شد "
+
+#: main/views.py:31 main/views.py:61
+msgid "You are now logged in as "
+msgstr "شما وارد شدید "
+
+#: main/views.py:48
+msgid "Logged out successfully"
+msgstr "شما با موفقیت خارج شدید"
+
+#: main/views.py:65 main/views.py:68
+msgid "Invalid ysername or password"
+msgstr "نام کاربری یا کلمه عبور نامعتبر است"

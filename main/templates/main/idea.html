@@ -1,0 +1,50 @@
+{% extends "main/header.html" %}
+
+{% block content %}
+	<div class="row" dir="rtl">
+		    <div class="col s12 m8 18" >
+		      <h3>{{idea.idea_title}}</h3>
+		      <p style="font-size:70%">منتشر شده: {{idea.idea_published}}      |  توسط: {{idea.idea_publisher}}</p> 
+		      
+
+		      <p><!-- AddToAny BEGIN -->
+				<div class="a2a_kit a2a_kit_size_32 a2a_default_style" data-a2a-url="{{ request.build_absolute_uri }}" data-a2a-title="این متن را در مداد فشاری بخوانید">
+				<a class="a2a_button_facebook"></a>
+				<a class="a2a_button_twitter"></a>
+				<a class="a2a_button_linkedin"></a>
+				<a class="a2a_button_telegram"></a>
+				<a class="a2a_button_copy_link"></a>
+				</div>
+				<script>
+				var a2a_config = a2a_config || {};
+				a2a_config.num_services = 2;
+				</script>
+				<script async src="https://static.addtoany.com/menu/page.js"></script>
+				<!-- AddToAny END -->
+
+		      </p>
+		      {{idea.idea_conttent|safe}}
+		    </div>
+
+		    <div class="col s12 m4 14">
+		    	<ul class="collapsible popout">
+		    		{% for idea in sidebar %}
+
+
+		    			{% if forloop.counter0 == this_idea_idx %}
+		    				<li class="active">
+		    					<div class="collapsible-header">{{idea.idea_title}}<br>(در حال دیدن)</div>
+		    				</li>
+		    			{% else %}
+		    				<li>
+		    					<div class="collapsible-header">{{idea.idea_title}}</div>
+		    					<div class="collapsible-body">
+		    						<p><a href="/{{idea.idea_slug}}"><button class="btn waves-effect waves-light right-align" style="background-color:yellow; color:black">باز کن</button></a></p>
+		    					</div>
+		    				</li>
+		    			{% endif %}
+		    		{% endfor %}
+		    	</ul>
+		    </div>
+	</div>
+{% endblock %}       

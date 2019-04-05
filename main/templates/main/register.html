@@ -1,0 +1,16 @@
+{% extends "main/header.html" %}
+
+{% block content %}
+
+	<form dir="rtl" method="POST">
+		{% csrf_token %}
+		{{form.as_p}}
+
+		<button class="btn" type="submit">ثبت نام</button>
+	</form>
+
+	<p dir="rtl">اگر شما قبلا یک حساب کاربری دارید، <a href="/login"><strong>ورود</strong></a> را بزنید</p> 
+	<h1>  </h1>
+
+{% endblock %}       
+

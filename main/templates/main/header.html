@@ -1,0 +1,49 @@
+<head>
+	{% load static %}
+
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+ 
+ 	
+
+ 	{% block css %}
+ 		<link href="{% static 'tinymce/css/prism.css' %}" rel="stylesheet">
+
+	<!-- Compiled and minified CSS -->
+ 		<link href="{% static 'main/css/materialize.css' %}" rel="stylesheet">
+ 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+ 		<link rel="stylesheet" type="text/css" href="{% static 'main/css/main.css' %}">
+ 	{% endblock css %}
+
+    <title>داستان نویسی | مداد فشاری</title>
+</head>
+
+
+<body>
+
+	{% include "main/includes/navbar.html" %}
+	
+	{% include "main/includes/messages.html" %}
+
+
+
+	<div class="container">
+		<br>
+		{% block content %}
+		{% endblock %} 
+		<br>
+	</div>
+            
+
+
+</body>
+
+
+	{% include "main/footer.html" %}
+
+
+
+<script src="{% static 'tinymce/js/prism.js' %}"></script>
+<script>M.AutoInit();</script>
