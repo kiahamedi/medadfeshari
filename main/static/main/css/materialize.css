@@ -1509,6 +1509,7 @@ figcaption,
 figure,
 main {
   /* 1 */
+
   display: block; }
 
 /**
@@ -2094,12 +2095,10 @@ ul.staggered-list li {
     text-align: center; } }
 
 .page-footer {
-  position:fixed;
-  bottom:0;
-  width:100%;
   padding-top: 20px;
   color: #fff;
   background-color: #6485D2; }
+
   .page-footer .footer-copyright {
     overflow: hidden;
     min-height: 50px;

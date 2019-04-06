@@ -1,18 +1,45 @@
 {% extends "main/header.html" %}
 
+</script>
 {% block content %}
-	<div class="row"  align="center" >
-		{% for cat in categories %}
-		    <div class="col s12 m6 14">
-		    	<a href="{{cat.category_slug}}",style="color:#000">
-		    		<div class="card hoverable">
-		    			<div class="card-content">
-		    				<div class="card-title">{{cat.idea_category}}</div>
-		    				<!--<p>{{cat.category_summery}}</p> -->
-		    			</div>
-		    		</div>
-		    </div>
-	    {% endfor %}
-	   
+<br>
+<div align="center" >آخرین نوشته ها</div>
+<br>
+<div class="row"  align="center" >
+	
+	{% for idea in Ideas %}
+	{% if forloop.counter <= 6 %}
+	<div class="col s12 m4 14">
+		<div class="card blue-grey darken-1">
+			<div class="card-content white-text">
+				<span>{{idea.idea_title}}</span>
+			</div>
+			<div class="card-action">
+				<a href="/{{idea.idea_slug}}">نمایش</a>
+			</div>
+		</div>
 	</div>
-{% endblock %}       
+	{% endif %}
+	
+	{% endfor %}
+</div>
+<br>
+<br>
+<br>
+<div align="center" >دسته بندی ها</div>
+<br>
+<div class="row"  align="center" >
+	{% for cat in categories %}
+	<div class="col s12 m6 14">
+		<a href="{{cat.category_slug}}",style="color:#000">
+			<div class="card hoverable">
+				<div class="card-content">
+					<div class="card-title">{{cat.idea_category}}</div>
+					<!--<p>{{cat.category_summery}}</p> -->
+				</div>
+			</div>
+		</div>
+		{% endfor %}
+		
+	</div>	
+	{% endblock %}       

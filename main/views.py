@@ -16,7 +16,8 @@ import json
 def homepage(request):
 	return render(request=request,
 				template_name="main/categories.html",
-				context={"categories":IdeaCategory.objects.all()})
+				context={"categories":IdeaCategory.objects.all(),
+						"Ideas":MyIdea.objects.order_by('idea_published').reverse()})
 
 
 
