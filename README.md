@@ -22,7 +22,7 @@ $ python3 manage.py runserver
 > If you need chatroom, see this repository : https://github.com/kiahamedi/node-chat-app
 ![alt text](https://raw.githubusercontent.com/kiahamedi/node-chat-app/master/Screenshot_2019-04-05_21-48-57.png)
 
-## Downloading
+## Are you a developer?
 > 1-Fork it!</br>
 > 2-Create your feature branch: git checkout -b my-new-feature</br>
 > 3-Commit your changes: git commit -am 'Add some feature'</br>
