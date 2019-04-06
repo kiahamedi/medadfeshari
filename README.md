@@ -1,5 +1,5 @@
 # medadfeshari
-> A story writing site with the Django framework
+> A story writing site with the Django framework - work with python 3 and django 2.1.5
 
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
@@ -10,7 +10,18 @@
 ## Downloading
 ```bash
 $ git clone https://github.com/kiahamedi/medadfeshari.git
+$ pip3 install django==2.1.5 tinymce
+$ cd medadfeshari/
+$ python3 manage.py runserver
 ```
 
 # Online 
 > The is online on domain : http://medadfeshari.ir
+
+
+## Downloading
+> 1-Fork it!
+> 2-Create your feature branch: git checkout -b my-new-feature
+> 3-Commit your changes: git commit -am 'Add some feature'
+> 4-Push to the branch: git push origin my-new-feature
+> 5-Submit a pull request
