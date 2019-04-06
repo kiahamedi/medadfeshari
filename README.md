@@ -16,7 +16,7 @@ $ python3 manage.py runserver
 ```
 
 # Online 
-> The is online on domain : http://medadfeshari.ir
+> This site is online on domain : http://medadfeshari.ir
 
 # Chatroom 
 > If you need chatroom, see this repository : https://github.com/kiahamedi/node-chat-app
