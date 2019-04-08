@@ -10,7 +10,7 @@
 ## Downloading
 ```bash
 $ git clone https://github.com/kiahamedi/medadfeshari.git
-$ pip3 install django==2.1.5 tinymce
+$ pip3 install requirements.txt
 $ cd medadfeshari/
 $ cd mysite/
 $ mv settings.py.sample settings.py
