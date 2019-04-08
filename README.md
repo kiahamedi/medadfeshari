@@ -12,6 +12,9 @@
 $ git clone https://github.com/kiahamedi/medadfeshari.git
 $ pip3 install django==2.1.5 tinymce
 $ cd medadfeshari/
+$ cd mysite/
+$ mv settings.py.sample settings.py
+$ cd ..
 $ python3 manage.py runserver
 ```
 
