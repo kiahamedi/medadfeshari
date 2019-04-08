@@ -26,7 +26,7 @@ SECRET_KEY = 'ov)_eav#$#$a5a&c2jr==g%dbwk!zasdcfsaclqd7#jns7f$kad'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+ 
 TINYMCE_DEFAULT_CONFIG = {
     'height' : 360,
     'width' : 1000,
