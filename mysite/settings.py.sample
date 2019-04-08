@@ -22,6 +22,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'ov)_eav#$#$a5a&c2jr==g%dbwk!zasdcfsaclqd7#jns7f$kad'
 
+
+
+RECAPTCHA_PRIVATE_KEY = 'your private key'
+RECAPTCHA_PUBLIC_KEY = 'your public key'
+# If you require reCaptcha to be loaded from somewhere other than https://google.com
+# (e.g. to bypass firewall restrictions), you can specify what proxy to use.
+# RECAPTCHA_PROXY_HOST = 'https://recaptcha.net'
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -67,6 +75,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main.apps.MainConfig',
     'tinymce',
+    'snowpenguin.django.recaptcha2',
     
 ]
 

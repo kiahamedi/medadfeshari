@@ -66,10 +66,10 @@ def login_request(request):
 				return redirect("main:homepage")
 
 			else:
-				messages.error(request, _("Invalid ysername or password"))
+				messages.error(request, _("Invalid ysername or password or recaptcha"))
 
 		else:
-			messages.error(request, _("Invalid ysername or password"))
+			messages.error(request, _("Invalid ysername or password or recaptcha"))
 
 	form = AuthenticationForm()
 	return render(request,

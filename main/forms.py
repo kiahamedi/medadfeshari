@@ -3,11 +3,15 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
+from snowpenguin.django.recaptcha2.fields import ReCaptchaField
+from snowpenguin.django.recaptcha2.widgets import ReCaptchaWidget
+
 
 
 
 class NewUserForm(UserCreationForm):
 	email = forms.EmailField(required=True)
+	captcha = ReCaptchaField(widget=ReCaptchaWidget())
 
 	class Meta:
 		model = User
@@ -20,3 +24,5 @@ class NewUserForm(UserCreationForm):
 			user.is_staff = True
 			user.save()
 		return user
+
+

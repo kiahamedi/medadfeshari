@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-03 01:56+0430\n"
+"POT-Creation-Date: 2019-04-09 00:05+0430\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -43,27 +43,32 @@ msgid "url"
 msgstr "آدرس اینترنتی"
 
 #: main/models.py:51
-#, fuzzy
-#| msgid "date published"
-msgid "Publisher"
-msgstr "نگارنده"
+msgid "نگارنده"
+msgstr ""
 
 #: main/models.py:54
 msgid "My idea"
 msgstr "نوشته های من"
 
-#: main/views.py:26
+#: main/views.py:30
 msgid "New Account Created: "
 msgstr "حساب کاربری شما ساخته شد "
 
-#: main/views.py:31 main/views.py:61
+#: main/views.py:35 main/views.py:65
 msgid "You are now logged in as "
 msgstr "شما وارد شدید "
 
-#: main/views.py:48
+#: main/views.py:52
 msgid "Logged out successfully"
 msgstr "شما با موفقیت خارج شدید"
 
-#: main/views.py:65 main/views.py:68
-msgid "Invalid ysername or password"
-msgstr "نام کاربری یا کلمه عبور نامعتبر است"
+#: main/views.py:69 main/views.py:72
+#, fuzzy
+#| msgid "Invalid ysername or password"
+msgid "Invalid ysername or password or recaptcha"
+msgstr "نام کاربری ، کلمه عبور با ریکپچا نامعتبر است"
+
+#, fuzzy
+#~| msgid "date published"
+#~ msgid "Publisher"
+#~ msgstr "نگارنده"
