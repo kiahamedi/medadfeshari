@@ -4,8 +4,8 @@
 	<div class="row" dir="rtl">
 		    <div class="col s12 m8 18" >
 		      <h3>{{idea.idea_title}}</h3>
-		      <p style="font-size:70%">منتشر شده: {{idea.idea_published}}      |  توسط: {{idea.idea_publisher}}</p> 
-		      
+		      <p style="font-size:70%">منتشر شده: {{idea.idea_published}}      |  توسط: {{idea.idea_publisher}} </p>
+
 
 		      <p><!-- AddToAny BEGIN -->
 				<div class="a2a_kit a2a_kit_size_32 a2a_default_style" data-a2a-url="{{ request.build_absolute_uri }}" data-a2a-title="این متن را در مداد فشاری بخوانید">
@@ -15,15 +15,31 @@
 				<a class="a2a_button_telegram"></a>
 				<a class="a2a_button_copy_link"></a>
 				</div>
+
+
 				<script>
 				var a2a_config = a2a_config || {};
 				a2a_config.num_services = 2;
 				</script>
 				<script async src="https://static.addtoany.com/menu/page.js"></script>
 				<!-- AddToAny END -->
+				{% if user.is_authenticated %}
+					{% if user.id == idea.created_by.id %}
+						<form action="/editPost/" method="post">
+							{% csrf_token %}
+					    <input name="slug" id="slug" value="{{idea.idea_slug}}" hidden>
+							<input name="created_by" id="created_by" value="{{idea.created_by.id}}" hidden>
+							<input name="title" id="title" value="{{idea.idea_title}}" hidden>
+							<input name="conttent" id="conttent" value="{{idea.idea_conttent}}" hidden>
 
-		      </p>
+					    <button class="btn ">ویرایش</button>
+
+					</form>
+					{% endif %}
+				{% endif %}
+
 		      {{idea.idea_conttent|safe}}
+
 		    </div>
 
 		    <div class="col s12 m4 14">
@@ -47,4 +63,4 @@
 		    	</ul>
 		    </div>
 	</div>
-{% endblock %}       
+{% endblock %}

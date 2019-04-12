@@ -1,0 +1,20 @@
+{% extends "main/header.html" %}
+
+  {% block content %}
+
+  {% if user.is_authenticated %}
+
+      <form action="/editPostDone/" method="post" dir="rtl">
+        {% csrf_token %}
+          <input name="slugedit" id="slugedit" value="{{ slugedit }}" hidden>
+          <input name="slugtitle" id="slugtitle" value="{{ slugtitle }}" >
+
+          <textarea name="area2" style="width: 100%;">
+             {{ slugcontent }}
+           </textarea><br />
+          <button class="btn ">ویرایش</button>
+      </form>
+
+  {% endif %}
+
+  {% endblock %}

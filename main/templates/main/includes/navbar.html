@@ -3,7 +3,7 @@
 		 <a href="/" style="margin-left:4px;font-family:georgia,garamond,serif" class="brand-logo"> Medadfeshari.ir <i class="fa fa-pencil" style="color:white;margin-left:6px"></i></a>
 		<ul id="nav-mobile" class="right hide-on-med-and-down">
 			{% if user.is_authenticated %}
-				<li><a href="/logout">خروج</a></li>
+				<li><a href="/logout/">خروج</a></li>
         		<li><a href="http://127.0.1:3000">اتاق گفتگو</a></li>
 				<li><a href="/admin"><strong>{{user.username}}</strong></a></li>
 			{% else %}
@@ -24,4 +24,3 @@
 </div>
 
 {% endif %}
-

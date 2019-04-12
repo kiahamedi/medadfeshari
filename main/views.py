@@ -20,6 +20,48 @@ def homepage(request):
 						"Ideas":MyIdea.objects.order_by('idea_published').reverse()})
 
 
+def editPost(request):
+	current_user = request.user
+	if request.method == "POST":
+		if str(current_user.id) == str(request.POST.get("created_by")):
+			print(request.POST)
+			slug_edit = request.POST.get("slug")
+			slug_title = request.POST.get("title")
+			slug_content = request.POST.get("conttent")
+			print("url"+str(slug_edit)+"title:"+str(slug_title)+"content"+str(slug_content))
+			return render(request,"main/editPost.html",
+			context={"slugedit":slug_edit,
+					"slugtitle":slug_title,
+					"slugcontent":slug_content})
+		else:
+			messages.info(request, ("کار شما قشنگ نیست دوست عزیز"))
+			return redirect("main:homepage")
+
+	else:
+		messages.info(request, ("کار شما قشنگ نیست دوست عزیز"))
+		return redirect("main:homepage")
+
+
+def editPostDone(request):
+	current_user = request.user
+	if request.method == "POST":
+
+		id_post = request.POST.get("slugedit")
+		title_post = request.POST.get("slugtitle")
+		content_post = request.POST.get("area2")
+		myPost = MyIdea.objects.get(idea_slug = id_post)
+		myPost.idea_title = title_post
+		myPost.idea_conttent = content_post
+		myPost.save()
+		messages.info(request, ("پست مورد نظر شما ویرایش گردید"))
+		return redirect("main:homepage")
+
+	else:
+		messages.info(request, ("انگار مشکلی پیش اومد"))
+
+
+
+
 
 def register(request):
 	if request.method == "POST":
