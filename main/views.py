@@ -34,7 +34,7 @@ def register(request):
 			login(request, user)
 			messages.info(request, _("You are now logged in as ") + username)
 
-			
+
 			return redirect("main:homepage")
 		else:
 			for msg in form.error_messages:
@@ -51,6 +51,7 @@ def logout_request(request):
 	logout(request)
 	messages.info(request,_("Logged out successfully"))
 	return redirect("main:homepage")
+
 
 
 def login_request(request):
@@ -81,7 +82,7 @@ def login_request(request):
 
 def single_slug(request,single_slug):
 	categories = [c.category_slug for c in IdeaCategory.objects.all()]
-	#print(categories)	
+	#print(categories)
 	if single_slug in categories:
 		matching_series = IdeaSeries.objects.filter(idea_category__category_slug=single_slug)
 		#print(matching_series)
@@ -93,12 +94,12 @@ def single_slug(request,single_slug):
 			#print(part_one)
 			#series_urls[m] = part_one.idea_slug
 			series_urls[m] = part_one.idea_slug
-			
+
 			#print(part_one.idea_slug)
 			#print(part_one)
 			#series_urls[m] = m.idea_series.replace(" ","-")
-			
-		
+
+
 		return render(request,
 						"main/category.html",
 						{"part_ones":series_urls})
@@ -124,4 +125,3 @@ def single_slug(request,single_slug):
 
 def index(request):
     return render(request, 'node-chat-app/public/index.html', {})
-
