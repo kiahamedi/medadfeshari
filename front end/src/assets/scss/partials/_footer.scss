@@ -1,5 +1,4 @@
 @import "../_global";
-@import "./responsive/_footer";
 footer {
   display: flex;
   flex-direction: column;
@@ -128,3 +127,4 @@ footer {
     }
   }
 }
+@import "./responsive/_footer";

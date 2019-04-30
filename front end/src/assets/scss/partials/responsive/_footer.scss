@@ -1,15 +1,152 @@
 // 0 up to  575px
 @media (max-width: 575px) {
+  footer {
+    .menu {
+      display: none;
+    }
+    .git-description {
+      padding: 85px 0;
+      .container {
+        width: 315px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        .thumbnail {
+          margin-bottom: 30px;
+          width: 100%;
+        }
+        .description-box {
+          width: 100%;
+          text-align: center;
+          .title {
+            font-size: 24px;
+            line-height: 40px;
+            text-align: center;
+          }
+          .description {
+            font-size: 20px;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 576px up to 767px
+@media (min-width: 576px) and (max-width: 767px) {
+  footer {
+    .menu {
+      display: none;
+    }
+    .git-description {
+      padding: 85px 0;
+      .container {
+        width: 556px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        .thumbnail {
+          margin-bottom: 30px;
+        }
+        .description-box {
+          width: 100%;
+          text-align: center;
+          .title {
+            text-align: center;
+          }
+          .description {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
 }
 
 // 768px up to 991px
 @media (min-width: 768px) and (max-width: 991px) {
+  footer {
+    .menu {
+      li {
+        a {
+          font-size: 23px;
+        }
+      }
+    }
+    .git-description {
+      padding: 85px 0;
+      .container {
+        width: 748px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        .thumbnail {
+          margin-bottom: 30px;
+        }
+        .description-box {
+          text-align: center;
+          .title {
+            text-align: center;
+          }
+          .description {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
 }
 
 // 992px up to 1199px
 @media (min-width: 992px) and (max-width: 1199px) {
+  footer {
+    .git-description {
+      padding: 85px 0;
+      .container {
+        width: 970px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        .thumbnail {
+          margin-bottom: 30px;
+        }
+        .description-box {
+          text-align: center;
+          .title {
+            text-align: center;
+          }
+          .description {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
 }
 
 // 1200px up to 1370px
 @media (min-width: 1200px) and (max-width: 1370px) {
+  footer {
+    .git-description {
+      .container {
+        width: 1180px;
+      }
+    }
+  }
+}
+
+// 1371px up to 1500px
+@media (min-width: 1371px) and (max-width: 1500px) {
+  footer {
+    .git-description {
+      .container {
+        width: 1240px;
+      }
+    }
+  }
 }

@@ -13,4 +13,9 @@ $(document).ready(function () {
       autoplaySpeed: 7000,
     });
   }
+
+  $("header .menu-button").click(function () {
+    $("html body").toggleClass("overflow-hidden");
+    $("header .menu").toggleClass("open");
+  });
 });

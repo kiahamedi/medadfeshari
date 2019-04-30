@@ -38,6 +38,9 @@ html,
 body {
   font: 16px/25px Vazir;
   background: $white;
+  &.overflow-hidden {
+    overflow: hidden;
+  }
   a {
     text-decoration: none;
     &:hover {

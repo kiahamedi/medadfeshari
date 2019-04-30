@@ -1,5 +1,4 @@
 @import "../_includes";
-@import "./responsive/index";
 .section {
   position: relative;
   &::after {
@@ -326,3 +325,4 @@
   }
   // end section 03
 }
+@import "./responsive/index";

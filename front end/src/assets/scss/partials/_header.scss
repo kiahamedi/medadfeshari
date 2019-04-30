@@ -1,5 +1,4 @@
 @import "../_global";
-@import "./responsive/_header";
 
 header {
   margin-bottom: 167px;
@@ -20,6 +19,10 @@ header {
       color: $greyish-brown;
       margin-left: 97px;
       line-height: 70px;
+    }
+    .menu-button {
+      display: none;
+      cursor: pointer;
     }
     .menu {
       display: flex;
@@ -93,6 +96,11 @@ header {
           }
         }
       }
+      &.open {
+        transform: translateX(0%) !important;
+        opacity: 1;
+      }
     }
   }
 }
+@import "./responsive/_header";
