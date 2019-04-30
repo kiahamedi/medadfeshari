@@ -12,6 +12,8 @@
         line-height: 40px;
       }
       .menu-button {
+        position: relative;
+        z-index: 101;
         background: none;
         border: none;
         width: 40px;
@@ -37,17 +39,18 @@
         display: flex;
         flex-direction: column;
         width: 100%;
-        padding-top: 130px;
-        padding-right: 40px;
+        padding-top: 90px;
+        padding-right: 0px;
         li {
           padding: 0;
           &::before {
             display: none;
           }
           a {
-            line-height: 74px;
+            font-size: 20px;
+            line-height: 45px;
             &::before {
-              background-size: calc(100% - 4px) 72px;
+              background-size: calc(100% - 4px) 45px;
               background-position: center;
             }
             &:hover {
