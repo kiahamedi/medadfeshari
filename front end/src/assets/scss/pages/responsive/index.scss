@@ -1,0 +1,575 @@
+@import "../../_includes";
+
+// 0 up to  575px
+@media (max-width: 575px) {
+  .section {
+    &.section-01 {
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+        width: 315px;
+        .thumbnail {
+          max-width: 100%;
+          max-height: 300px;
+        }
+        .description-box {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: center;
+          width: 100%;
+          padding: 0 10px;
+          margin-top: 30px;
+
+          .description {
+            font-size: 21px;
+            line-height: 40px;
+          }
+          .button {
+            margin-top: 30px;
+            width: 100%;
+          }
+        }
+      }
+    }
+    &.section-02 {
+      .container {
+        width: 315px;
+        display: flex;
+
+        justify-content: center;
+        .diary-slider {
+          width: 100%;
+          .slick-arrow {
+            display: none !important;
+          }
+          .slide {
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            .thumbnail {
+              width: 100%;
+              height: 350px;
+              margin-left: 0px;
+            }
+            .description-box {
+              width: 100%;
+              text-align: center;
+              padding: 0;
+              .description {
+                line-height: 40px;
+                font-size: 21px;
+                text-align: center;
+              }
+            }
+          }
+        }
+      }
+    }
+    &.section-03 {
+      padding: 75px 0 150px;
+      .container {
+        // padding: 0 20px;
+        flex-direction: column;
+        align-items: center;
+        width: 315px;
+        .thumbnail {
+          width: 100%;
+          height: 300px;
+          margin-top: 0;
+        }
+        .categories-box {
+          margin-top: 50px;
+          width: 100%;
+          > .title {
+            font-size: 37px;
+            text-align: center;
+          }
+          .categories-list {
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: column;
+            li {
+              margin-left: 0;
+              margin-bottom: 20px;
+              a {
+                height: 100px;
+                width: 268px;
+                .icon {
+                  &::before {
+                    width: 100px;
+                    right: 0px;
+                  }
+                }
+                .texts {
+                  position: relative;
+                  padding: 0 20px;
+                  .title {
+                    font-size: 23px;
+                  }
+                  .count {
+                    font-size: 17px;
+                    line-height: 25px;
+                  }
+                }
+              }
+            }
+          }
+          .more-category {
+            line-height: 60px;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 576px up to 767px
+@media (min-width: 576px) and (max-width: 767px) {
+  .section {
+    &.section-01 {
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+        width: 556px;
+        .thumbnail {
+          max-width: 430px;
+          max-height: 400px;
+        }
+        .description-box {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: center;
+          width: 500px;
+          .description {
+            font-size: 28px;
+            line-height: 50px;
+          }
+          .button {
+            margin-top: 80px;
+          }
+        }
+      }
+    }
+    &.section-02 {
+      .container {
+        width: 556px;
+        display: flex;
+
+        justify-content: center;
+        .diary-slider {
+          width: 100%;
+          .slick-arrow {
+            display: none !important;
+          }
+          .slide {
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            .thumbnail {
+              width: 100%;
+              height: 350px;
+              margin-left: 0px;
+            }
+            .description-box {
+              text-align: center;
+              .description {
+                text-align: center;
+              }
+            }
+          }
+        }
+      }
+    }
+    &.section-03 {
+      padding: 75px 0 150px;
+      .container {
+        // padding: 0 20px;
+        flex-direction: column;
+        align-items: center;
+        width: 556px;
+        .thumbnail {
+          width: 430px;
+          height: 430px;
+          margin-top: 0;
+        }
+        .categories-box {
+          margin-top: 50px;
+          width: 100%;
+          > .title {
+            text-align: center;
+          }
+          .categories-list {
+            justify-content: center;
+            li {
+              margin-left: 20px;
+              margin-bottom: 20px;
+              a {
+                height: 100px;
+                width: 268px;
+                .icon {
+                  &::before {
+                    width: 100px;
+                    right: 0px;
+                  }
+                }
+                .texts {
+                  position: relative;
+                  padding: 0 20px;
+                  .title {
+                    font-size: 23px;
+                  }
+                  .count {
+                    font-size: 17px;
+                    line-height: 25px;
+                  }
+                }
+              }
+            }
+          }
+          .more-category {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 768px up to 991px
+@media (min-width: 768px) and (max-width: 991px) {
+  .section {
+    &.section-01 {
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+        width: 748px;
+        .thumbnail {
+          max-width: 430px;
+          max-height: 400px;
+        }
+        .description-box {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: center;
+          width: 500px;
+          .description {
+            font-size: 28px;
+            line-height: 50px;
+          }
+          .button {
+            margin-top: 80px;
+          }
+        }
+      }
+    }
+    &.section-02 {
+      .container {
+        width: 748px;
+        display: flex;
+
+        justify-content: center;
+        .diary-slider {
+          width: 100%;
+          .slick-arrow {
+            display: none !important;
+          }
+          .slide {
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            .thumbnail {
+              width: 560px;
+              height: 480px;
+              margin-left: 0px;
+            }
+            .description-box {
+              text-align: center;
+              .description {
+                text-align: center;
+              }
+            }
+          }
+        }
+      }
+    }
+    &.section-03 {
+      padding: 75px 0 150px;
+      .container {
+        // padding: 0 20px;
+        flex-direction: column;
+        align-items: center;
+        width: 748px;
+        .thumbnail {
+          width: 430px;
+          height: 430px;
+          margin-top: 0;
+        }
+        .categories-box {
+          margin-top: 50px;
+          width: 640px;
+          > .title {
+            text-align: center;
+          }
+          .categories-list {
+            li {
+              a {
+                height: 100px;
+                width: 300px;
+                .icon {
+                  &::before {
+                    width: 100px;
+                    right: 0px;
+                  }
+                }
+                .texts {
+                  position: relative;
+                  padding: 0 20px;
+                  .title {
+                    font-size: 23px;
+                  }
+                  .count {
+                    font-size: 17px;
+                    line-height: 25px;
+                  }
+                }
+              }
+            }
+          }
+          .more-category {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 992px up to 1199px
+@media (min-width: 992px) and (max-width: 1199px) {
+  .section {
+    &.section-01 {
+      .container {
+        width: 970px;
+        .thumbnail {
+          max-width: 430px;
+          max-height: 400px;
+        }
+        .description-box {
+          width: 500px;
+          .description {
+            font-size: 28px;
+            line-height: 50px;
+          }
+          .button {
+            margin-top: 80px;
+          }
+        }
+      }
+    }
+    &.section-02 {
+      .container {
+        width: 970px;
+        display: flex;
+
+        justify-content: center;
+        .diary-slider {
+          width: 100%;
+          .slick-arrow {
+            display: none !important;
+          }
+          .slide {
+            .thumbnail {
+              width: 560px;
+              height: 480px;
+              margin-left: 0px;
+            }
+          }
+        }
+      }
+    }
+    &.section-03 {
+      padding: 75px 0 150px;
+      .container {
+        // padding: 0 20px;
+        flex-direction: column;
+        align-items: center;
+        width: 992px;
+        .thumbnail {
+          width: 430px;
+          height: 430px;
+          margin-top: 0;
+        }
+        .categories-box {
+          margin-top: 50px;
+          width: 640px;
+          > .title {
+            text-align: center;
+          }
+          .categories-list {
+            li {
+              a {
+                height: 100px;
+                width: 300px;
+                .icon {
+                  &::before {
+                    width: 100px;
+                    right: 0px;
+                  }
+                }
+                .texts {
+                  position: relative;
+                  padding: 0 20px;
+                  .title {
+                    font-size: 23px;
+                  }
+                  .count {
+                    font-size: 17px;
+                    line-height: 25px;
+                  }
+                }
+              }
+            }
+          }
+          .more-category {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 1200px up to 1370px
+@media (min-width: 1200px) and (max-width: 1370px) {
+  .section {
+    &.section-01 {
+      .container {
+        width: 1180px;
+        .thumbnail {
+          max-width: 500px;
+          max-height: 450px;
+        }
+      }
+    }
+    &.section-02 {
+      .container {
+        width: 1180px;
+        display: flex;
+
+        justify-content: center;
+        .diary-slider {
+          width: 1140px;
+          .slick-arrow {
+            display: none !important;
+          }
+          .slide {
+            .thumbnail {
+              width: 560px;
+              height: 480px;
+              margin-left: 0px;
+            }
+          }
+        }
+      }
+    }
+    &.section-03 {
+      padding-bottom: 140px;
+      .container {
+        // padding: 0 20px;
+        width: 1180px;
+        .thumbnail {
+          width: 430px;
+          height: 430px;
+          margin-top: 110px;
+        }
+        .categories-box {
+          width: 640px;
+          .categories-list {
+            li {
+              a {
+                height: 100px;
+                width: 300px;
+                .icon {
+                  &::before {
+                    width: 100px;
+                    right: 0px;
+                  }
+                }
+                .texts {
+                  position: relative;
+                  padding: 0 20px;
+                  .title {
+                    font-size: 23px;
+                  }
+                  .count {
+                    font-size: 17px;
+                    line-height: 25px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// 1371px up to 1500px
+@media (min-width: 1371px) and (max-width: 1500px) {
+  .section {
+    &.section-01 {
+      .container {
+        .thumbnail {
+          max-width: 570px;
+          max-height: 450px;
+        }
+      }
+    }
+    &.section-02 {
+      .container {
+        width: 1240px;
+        .diary-slider {
+          width: 1140px;
+          .slide {
+            .thumbnail {
+              width: 560px;
+              height: 480px;
+              margin-left: 0px;
+            }
+          }
+        }
+      }
+    }
+    &.section-03 {
+      padding-bottom: 140px;
+      .container {
+        width: 1240px;
+        .thumbnail {
+          width: 430px;
+          height: 430px;
+          margin-top: 110px;
+        }
+        .categories-box {
+          .categories-list {
+            li {
+              a {
+                width: 358px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

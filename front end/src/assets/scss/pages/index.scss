@@ -1,0 +1,328 @@
+@import "../_includes";
+.section {
+  position: relative;
+  &::after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 22px;
+    background: url("../../images/pattern-03.svg") repeat center;
+  }
+  // section 01
+  &.section-01 {
+    padding-bottom: 132px;
+    .container {
+      width: 1329px;
+      display: flex;
+      flex-direction: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      .thumbnail {
+        max-width: 660px;
+        max-height: 500px;
+        display: block;
+        overflow: hidden;
+        img {
+          width: 100%;
+          height: 100%;
+          display: block;
+          object-fit: contain;
+        }
+      }
+      .description-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding-top: 30px;
+        width: 665px;
+        .title {
+          display: none;
+        }
+        .description {
+          font-family: Vazir;
+          font-size: 33px;
+          font-weight: 300;
+          font-style: normal;
+          font-stretch: normal;
+          letter-spacing: normal;
+          text-align: justify;
+          line-height: 57px;
+          color: $greyish-brown;
+        }
+        .button {
+          margin-top: 118px;
+          background: url("../../images/pattern-02.svg") no-repeat center;
+          background-size: contain;
+          line-height: 90px;
+          height: 93px;
+          width: 424px;
+          text-align: center;
+          color: $black;
+          display: block;
+          padding: 0 20px;
+          font-size: 34px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  // end section 01
+
+  // section 02
+  &.section-02 {
+    padding: 71px 0 104px;
+    .container {
+      width: 1470px;
+      position: relative;
+      .diary-slider {
+        position: static;
+        width: 1280px;
+        .slide {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .thumbnail {
+            width: 650px;
+            height: 510px;
+            margin-left: 30px;
+            img {
+              display: block;
+              width: 100%;
+              height: 100%;
+              object-fit: contain;
+            }
+          }
+          .description-box {
+            width: 560px;
+            padding: 0 39.5px;
+            .title {
+              a {
+                font-size: 33px;
+                line-height: 40px;
+                font-weight: 300;
+                font-style: normal;
+                font-stretch: normal;
+                letter-spacing: normal;
+                color: $greyish-brown;
+                transition: all ease 0.3s;
+                &:visited {
+                  color: $greyish-brown;
+                }
+                &:hover {
+                  color: $macaroni-and-cheese;
+                }
+              }
+            }
+            .description {
+              font-size: 27.5px;
+              font-weight: 300;
+              font-style: normal;
+              font-stretch: normal;
+              letter-spacing: normal;
+              text-align: justify;
+              color: $greyish-brown;
+              margin-top: 45px;
+              line-height: 50px;
+            }
+          }
+        }
+        .slick-arrow {
+          position: absolute;
+          cursor: pointer;
+          &.slick-prev {
+            display: none !important;
+          }
+          &.slick-next {
+            width: 100px;
+            border: none;
+            background: transparent;
+            color: transparent;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            left: 0;
+            top: calc((100% - 90px) / 2);
+            position: absolute;
+            &::before {
+              margin-bottom: 6px;
+              content: "";
+              width: 16px;
+              height: 31px;
+              display: inline-block;
+              background: url("../../images/right-angle.svg") no-repeat center;
+            }
+            &::after {
+              content: "برو بعدی";
+              color: $black;
+              font-size: 26px;
+              font-weight: 300;
+              font-style: normal;
+              font-stretch: normal;
+              line-height: 35px;
+              letter-spacing: normal;
+              text-align: justify;
+            }
+          }
+        }
+      }
+    }
+  }
+  // end section 02
+
+  //   section 03
+  &.section-03 {
+    padding: 195px 0 280px;
+    &::after {
+      display: none;
+    }
+    .container {
+      width: 1470px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      .thumbnail {
+        width: 542px;
+        height: 550px;
+        overflow: hidden;
+        img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+      .categories-box {
+        width: 768px;
+        > .title {
+          margin-bottom: 63px;
+          font-size: 53px;
+          font-weight: bold;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: 73px;
+          letter-spacing: normal;
+          color: $greyish-brown;
+        }
+        .categories-list {
+          display: flex;
+          align-items: flex-start;
+          justify-content: flex-start;
+          flex-wrap: wrap;
+          li {
+            margin-left: 40px;
+            list-style-type: none;
+            margin-bottom: 34px;
+            &:nth-child(2n) {
+              margin-left: 0px;
+            }
+            a {
+              width: 364px;
+              height: 117px;
+              border-radius: 4px;
+              box-shadow: 0px 10px 27px 0 rgba($very-light-pink, 0.57);
+              background-color: $white;
+              display: flex;
+              align-items: center;
+              justify-content: flex-start;
+              .icon {
+                position: relative;
+                width: 76px;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                img {
+                  display: block;
+                  width: 38px;
+                  height: 32px;
+                  position: relative;
+                  z-index: 10;
+                  object-fit: contain;
+                }
+                &::before {
+                  opacity: 0;
+                  content: "";
+                  background: url("../../images/pattern-04.svg") no-repeat center;
+                  background-size: 100%;
+                  width: 173px;
+                  height: 93px;
+                  position: absolute;
+                  top: calc((100% - 93px) / 2);
+                  right: -42px;
+                  transition: all ease 0.4s;
+                }
+              }
+              .texts {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                padding: 0 72px 0 20px;
+                width: calc(100% - 38px - 38px);
+                .title {
+                  transition: all ease 0.4s;
+                  height: 40px;
+                  font-size: 33px;
+                  font-weight: 300;
+                  font-style: normal;
+                  font-stretch: normal;
+                  line-height: 40px;
+                  letter-spacing: normal;
+                  color: $greyish-brown;
+                  text-overflow: ellipsis;
+                  white-space: nowrap;
+                  width: 100%;
+                  overflow: hidden;
+                }
+                .count {
+                  margin-top: 9px;
+                  font-size: 24px;
+                  font-weight: 300;
+                  font-style: normal;
+                  font-stretch: normal;
+                  letter-spacing: normal;
+                  color: $brown-grey;
+                  line-height: 40px;
+                }
+              }
+              &:hover {
+                .icon {
+                  &::before {
+                    opacity: 1;
+                  }
+                }
+                .texts {
+                  .title {
+                    font-weight: bold;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .more-category {
+          font-size: 31px;
+          font-weight: 300;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: 40px;
+          letter-spacing: normal;
+          color: $black-two;
+          margin-top: 44px;
+          a {
+            background: url("../../images/pattern-05.svg") no-repeat center;
+            padding: 0 20px;
+            background-size: 100% 40px;
+          }
+        }
+      }
+    }
+  }
+  // end section 03
+}
+@import "./responsive/index";
