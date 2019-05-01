@@ -14,3 +14,5 @@ tests/.coverage
 build/
 tests/report/
 settings.py
+node_modules
+.idea
