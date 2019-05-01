@@ -1,0 +1,57 @@
+@import "../global";
+@import "./Normalize";
+
+@font-face {
+  font-family: Vazir;
+  font-style: normal;
+  font-weight: bold;
+  src: url("./../../fonts/woff2/Vazir-Bold.woff2") format("woff2"),
+    url("./../../fonts/woff/Vazir-Bold.woff") format("woff");
+}
+@font-face {
+  font-family: Vazir;
+  font-style: normal;
+  font-weight: 300;
+  src: url("./../../fonts/woff2/Vazir-Light.woff2") format("woff2"),
+    url("./../../fonts/woff/Vazir-Light.woff") format("woff");
+}
+@font-face {
+  font-family: Vazir;
+  font-style: normal;
+  font-weight: normal;
+  src: url("./../../fonts/woff2/Vazir-Medium.woff2") format("woff2"),
+    url("./../../fonts/woff/Vazir-Medium.woff") format("woff");
+}
+
+*,
+::before,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  outline: none;
+}
+
+html,
+body {
+  font: 16px/25px Vazir;
+  background: $white;
+  &.overflow-hidden {
+    overflow: hidden;
+  }
+  a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+    }
+    &:visited {
+      color: inherit;
+    }
+  }
+  .container {
+    display: block;
+    margin: 0 auto;
+  }
+}
