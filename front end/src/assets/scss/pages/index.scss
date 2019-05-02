@@ -109,6 +109,11 @@
                 letter-spacing: normal;
                 color: $greyish-brown;
                 transition: all ease 0.3s;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                width: 100%;
+                display: block;
                 &:visited {
                   color: $greyish-brown;
                 }

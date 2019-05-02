@@ -468,15 +468,27 @@
 
         justify-content: center;
         .diary-slider {
-          width: 1140px;
+          margin-right: -110px;
+          width: 1000px;
           .slick-arrow {
-            display: none !important;
+            // display: none !important;
+            &.slick-next {
+              &::after {
+                font-size: 18px;
+              }
+            }
           }
           .slide {
             .thumbnail {
-              width: 560px;
+              width: 50%;
               height: 480px;
               margin-left: 0px;
+            }
+            .description-box {
+              width: 50%;
+              .description {
+                font-size: 20.5px;
+              }
             }
           }
         }
