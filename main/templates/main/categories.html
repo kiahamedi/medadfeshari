@@ -1,5 +1,5 @@
 {% extends "main/header.html" %}
-
+{% load staticfiles %}
 </script>
 {% block content %}
 <br>
@@ -28,18 +28,39 @@
 <br>
 <div align="center" >دسته بندی ها</div>
 <br>
-<div class="row"  align="center" >
-	{% for cat in categories %}
-	<div class="col s12 m6 14">
-		<a href="{{cat.category_slug}}",style="color:#000">
-			<div class="card hoverable">
-				<div class="card-content">
-					<div class="card-title">{{cat.idea_category}}</div>
-					<!--<p>{{cat.category_summery}}</p> -->
-				</div>
-			</div>
-		</div>
-		{% endfor %}
-		
-	</div>	
-	{% endblock %}       
+
+
+<!-- section 03 -->
+  <section class="section section-03" dir="rtl">
+    <div class="container" >
+
+      <!-- thumbnail -->
+      <figure class="thumbnail">
+        <img src="{% static 'main/assets/images/image-03.png' %}" alt="">
+      </figure>
+      <!-- end thumbnail -->
+
+      <!-- categories box -->
+      <div class="categories-box">
+        <h4 class="title">چی کجاست ؟</h4>
+        <ul class="categories-list">
+        {% for cat in categories %}
+          <li>
+            <a href="{{cat.category_slug}}">
+              <span class="icon"><img src="{% static 'main/assets/images/icon-folder.svg' %}" alt=""></span>
+              <span class="texts">
+                <span class="title">{{cat.idea_category}}</span>
+                <span class="count">۳۰ یادداشت</span>
+              </span>
+            </a>
+          </li>
+        {% endfor %}
+        </ul>
+        <p class="more-category">بیشتر از این ها هم<a href="#">اینجا</a>داریم</p>
+      </div>
+      <!-- end categories box -->
+    </div>
+  </section>
+  <!-- end section 03 -->
+
+  {% endblock %}  
