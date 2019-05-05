@@ -109,6 +109,11 @@
                 letter-spacing: normal;
                 color: $greyish-brown;
                 transition: all ease 0.3s;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                width: 100%;
+                display: block;
                 &:visited {
                   color: $greyish-brown;
                 }
@@ -159,7 +164,7 @@
             &::after {
               content: "برو بعدی";
               color: $black;
-              font-size: 26px;
+              font-size: 23px;
               font-weight: 300;
               font-style: normal;
               font-stretch: normal;
