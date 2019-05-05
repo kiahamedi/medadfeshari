@@ -1,26 +1,30 @@
-<nav>
-	<div class="nav-wrapper">
-		 <a href="/" style="margin-left:4px;font-family:georgia,garamond,serif" class="brand-logo"> Medadfeshari.ir <i class="fa fa-pencil" style="color:white;margin-left:6px"></i></a>
-		<ul id="nav-mobile" class="right hide-on-med-and-down">
-			{% if user.is_authenticated %}
-				<li><a href="/logout/">خروج</a></li>
-        		<li><a href="http://127.0.1:3000">اتاق گفتگو</a></li>
-				<li><a href="/admin"><strong>{{user.username}}</strong></a></li>
-			{% else %}
-				<li><a href="/register">ثبت نام</a></li>
-				<li><a href="/login">ورود</a></li>
-			{% endif %}
-			<li><a href="/">خانه</a></li>
-		</ul>
-	</div>
-</nav>
+<header dir="rtl">
+    <div class="container">
 
-{% if user.is_authenticated %}
-<div class="fixed-action-btn" >
-  <a class="btn-floating btn-large red" href="/admin/main/myidea/add/">
-    <i class="large material-icons"><i class="fa fa-plus"></i></i>
-  </a>
+      <!-- logo -->
+      <a href="/" class="logo">
+        مدادفشاری
+      </a>
+      <!-- end logo -->
 
-</div>
+      <button type="button" class="menu-button"><img src="./assets/images/menu.png" alt=""></button>
 
-{% endif %}
+      <!-- menu -->
+      <ul class="menu">
+      	{% if user.is_authenticated %}
+      		<li><a href="/"><span class="text">صفحه اصلی</span></a></li>
+	        <li><a href="/admin"><span class="text"><strong>{{user.username}}</strong></span></a></li>
+	        <li><a href="https://agile-island-30135.herokuapp.com/"><span class="text">اتاق گفتگو</span></a></li>
+	        <li><a href="/logout/"><span class="text">خروج</span></a></li>
+      	{% else %}
+      		<li><a href="/"><span class="text">صفحه اصلی</span></a></li>
+	        <li><a href="/register"><span class="text">عضویت</span></a></li>
+	        <li><a href="/login"><span class="text">ورود</span></a></li>
+	        <li><a href="#"><span class="text">پشت پرده سایت</span></a></li>
+      	{% endif %}
+        
+      </ul>
+      <!-- end menu -->
+
+    </div>
+</header>
