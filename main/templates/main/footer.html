@@ -1,45 +1,48 @@
 {% load staticfiles %}
-<!-- footer -->
-  <footer dir="rtl">
-    <!-- menu -->
-    <ul class="menu">
-      {% if user.is_authenticated %}
-      <li><a href="/admin"><span class="text"><strong>{{user.username}}</strong></span></a></li>
-      <li><a href="https://agile-island-30135.herokuapp.com/"><span class="text">اتاق گفتگو</span></a></li>
-      <li><a href="/logout/"><span class="text">خروج</span></a></li>
+
+<!-- **************** START Footer ******************** -->
+
+<div class="footer-menu text-center"><!-- START - This is Footer menu -->
+    <ul>
+        <!--
+        |--------------------------------------------------------------------------
+        | !! Note :
+        |--------------------------------------------------------------------------
+        | If you want to add more than 4 links , you need
+        | to open this file : css/style.css/
+        | and edit this line : 343 and decrease it’s font-size.
+        |
+        -->
+        {% if user.is_authenticated %}
+          <li><a href="/admin"><strong>{{user.username}}</strong></a></li>
+          <li><a href="https://agile-island-30135.herokuapp.com/">اتاق گفتگو</a></li>
+          <li><a href="/logout/">خروج</a></li>
 
       {% else %}
-      <li><a href="/login"><span class="text">ورود</span></a></li>
-      <li><a href="/register"><span class="text">عضویت</span></a></li>
-      <li><a href="mailto:kia.arta9793@gmail.com?subject=medadfeshari"><span class="text">ارسال ایمیل</span></a></li>
-      <li><a href="https://www.aparat.com/v/SvsJR"><span class="text">ویدیو آموزشی</span></a></li>
+          <li><a href="/login">ورود</a></li>
+          <li><a href="/register">عضویت</a></li>
+          <li><a href="mailto:kia.arta9793@gmail.com?subject=medadfeshari">ارسال ایمیل</a></li>
+          <li><a href="https://www.aparat.com/v/SvsJR">ویدیو آموزشی</a></li>
       {% endif %}
     </ul>
-    <!-- end menu -->
+</div><!-- END - This is Footer menu -->
 
-    <!-- git description -->
-    <div class="git-description">
-      <div class="container">
-        <figure class="thumbnail">
-          <img src="{% static 'main/assets/images/image-04.png' %}" alt="">
-        </figure>
-        <div class="description-box">
-          <h6 class="title">کل پروژه رو گذاشتیم توی گیت میت</h6>
-          <p class="description">
-            خفن مفن نیستیم ولی همه چیزو میزاریم توی یک کتابخونه بزرگ کد مود که اگه یکی فکر کردی میتونست به ما کمک کنه یا
-            یک
-            چیز بهتری خلق ملق کنه داشته باشش .
-          </p>
-          <a href="https://github.com/kiahamedi/medadfeshari"><img src=" {% static 'main/assets/images/GITHUB.png' %}" alt=""></a>
-        </br>
-        </br>
-          <p>
-            پیاده سازی با نسخه ۲.۱.۵ فریمورک جنگو © 2019 تمام حقوق مطالب منتشر شده برای نگارنده مطلب محفوظ میباشد. 
-          </p>
+<div class="clearfix"></div><!-- This tag is for elimination of Floats (Please don’t delete this) -->
+
+<footer>
+    <div class="container">
+        <div class="footer-bottom">
+            <div class="col-md-5">
+                <img src="{% static 'main/images/image06.png' %}" class="img-responsive" alt="">
+            </div>
+            <div class="col-md-7">
+                <h2>کل پروژه رو گذاشتیم توی گیت میت</h2>
+                <p>خفن مفن نیستیم ولی همه چیزو میزاریم توی یک کتابخونه بزرگ کد مود که اگه یکی فکر کردی میتونست به ما کمک
+                    کنه یا یک چیز بهتری خلق ملق کنه داشته باشش </p>
+                <a href="https://github.com/kiahamedi/medadfeshari"><img src="{% static 'main/images/pattern/github-logo.png' %}" alt=""></a><!-- link Github -->
+                <h6> پیاده سازی با نسخه ۲.۱.۵ فریمورک جنگو © 2019 تمام حقوق مطالب منتشر شده برای نگارنده مطلب محفوظ
+                    میباشد. </h6>
+            </div>
         </div>
-
-      </div>
     </div>
-    <!-- end git description -->
-  </footer>
-  <!-- end footer -->
+</footer>

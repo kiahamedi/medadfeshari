@@ -1,17 +1,36 @@
 {% extends "main/header.html" %}
-
+{% load staticfiles %}
 {% block content %}
-	<div class="row" dir="rtl">
-		{% for idea, partone in part_ones.items %}
-		    <div class="col s12 m6 14">
-		    	<a href="{{partone}}",style="color:#000">
-		    		<div class="card hoverable">
-		    			<div class="card-content">
-		    				<div class="card-title">{{idea.idea_series}}</div>
-		    				<p dir="ltr">{{idea.series_summary}}</p>
-		    			</div>
-		    		</div>
-		    </div>
-	    {% endfor %}
-	</div>
-{% endblock %}       
+
+
+<!-- **************** Start Content ******************** -->
+
+<section class="category-page"><!-- Start - This section is related to our categories. -->
+    <div class="container">
+        <h3 class="col-md-12">دسته بندی ها</h3><!-- Title Page -->
+        <!--
+           |Each div below is one of our categories :
+           |( all you need to do is to put one of the posts in the | FOR or FOREACH | and erase the rest)
+
+        -->
+        {% for idea, partone in part_ones.items %}
+        <div class="col-md-4 col-sm-6"><!-- Start Post -->
+            <a href="{{partone}}">
+                <div class="item">
+                    <div class="item-img">
+                        <img src="{% static 'main/images/pattern/folder-icon.png' %}" alt="">
+                        <span></span>
+                    </div>
+                    <h4>{{idea.idea_series}}</h4>
+                    <p>{{idea.series_summary}}</p>
+                </div>
+            </a>
+        </div><!-- END Post -->
+        {% endfor %}
+    </div>
+</section><!-- END - This section is related to our categories. -->
+
+<div class="clearfix"></div><!-- This tag is for elimination of Floats (Please don’t delete this) -->
+
+<!-- **************** End Content ******************** -->
+{% endblock %}  

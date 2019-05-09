@@ -1,13 +1,138 @@
 {% extends "main/header.html" %}
 
 {% block content %}
-	<div class="row" dir="rtl">
-		    <div class="col s12 m8 18" >
-		      <h3>{{idea.idea_title}}</h3>
-		      <p style="font-size:70%">منتشر شده: {{idea.idea_published}}      |  توسط: {{idea.idea_publisher}} </p>
 
+<!-- **************** Start Content ******************** -->
 
-		      <p><!-- AddToAny BEGIN -->
+<section class="single-page"><!-- Start - This section is related to single page. -->
+    <div class="container">
+        <div class="col-md-4"><!-- Start SideBar-right -->
+            <div class="sidebar">
+                <!--
+                |--------------------------------------------------------------------------
+                | !! Note :
+                |--------------------------------------------------------------------------
+                | This should only be shown to managers and writers of each story
+                | if you don’t want to use it then comment it .
+                -->
+                {% if user.is_authenticated %}
+					{% if user.id == idea.created_by.id %}
+
+						<form action="/editPost/" method="post">
+								{% csrf_token %}
+						    <input name="slug" id="slug" value="{{idea.idea_slug}}" hidden>
+								<input name="created_by" id="created_by" value="{{idea.created_by.id}}" hidden>
+								<input name="title" id="title" value="{{idea.idea_title}}" hidden>
+								<input name="conttent" id="conttent" value="{{idea.idea_conttent}}" hidden>
+
+			                <div class="single-manager-box"><!-- author Panel -->
+			                    <div class="panel-gruop">
+			                        <div class="panel panel-default">
+			                            <div class="panel-heading">
+			                                <h3 class="panel-title"><a href="#collapse1" data-toggle="collapse">ابزار های
+			                                    نویسنده</a></h3>
+			                            </div>
+		                            <div id="collapse1" class="panel-collapse collapse in">
+		                                <div class="panel-body">
+		                                    <ul>
+		                                        <!--
+		                                        |--------------------------------------------------------------------------
+		                                        | !! Note :
+		                                        |--------------------------------------------------------------------------
+		                                        | If you want to add more features , Make a copy of each li tag and link
+		                                        it to the page you want - and for setting related icon visit this
+		                                        | website => https://fontawesome.com/icons
+		                                        -->
+		                                        <li>
+		                                            <i class="fa fa-edit"></i>
+		                                            <button style="background:none;border:none;margin:0;padding:0;">ویرایش</button>
+
+		                                        </li>
+		                                        <li>
+		                                            <i class="fa fa-trash"></i>
+		                                            <a href="#">حذف</a>
+		                                        </li>
+		                                        <li>
+		                                            <i class="fa fa-envelope"></i>
+		                                            <a href="#">پیام به مدیریت</a>
+		                                        </li>
+		                                    </ul>
+		                                </div>
+		                            </div>
+		                        </div>
+		                    </div>
+		                </div>
+	                </form>
+                	{% endif %}
+				{% endif %}
+				<!-- author Panel -->
+                <div class="panel-gruop"><!-- secend Panel -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><a href="#collapse2" data-toggle="collapse">داستان های مشابه</a>
+                            </h3>
+                        </div>
+                        <div id="collapse2" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <ul class="like-story">
+                                	{% for idea in sidebar %}
+                                		{% if forloop.counter0 == this_idea_idx %}
+                                    <!--
+                                       |Each li Tage below is one of our post :
+                                       |( all you need to do is to put one of the posts in the | FOR or FOREACH | and erase the rest)
+                                    --><li><!-- Start Post -->
+	                                        <a href="/{{idea.idea_slug}}">
+	                                            <!--<img src="images/image02.png" alt="">-->
+	                                            <h4>{{idea.idea_title}} (در حال دیدن)</h4>
+	                                            <h6>نویسنده : {{idea.idea_publisher}}</h6>
+	                                        </a>
+	                                    </li><!-- END Post -->
+
+                                    	{% else %}
+	                                    <li><!-- Start Post -->
+	                                        <a href="/{{idea.idea_slug}}">
+	                                            <!--<img src="images/image02.png" alt="">-->
+	                                            <h4>{{idea.idea_title}}</h4>
+	                                            <h6>نویسنده : {{idea.idea_publisher}}</h6>
+	                                        </a>
+	                                    </li><!-- END Post -->
+
+                                    	{% endif %}
+		    						{% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- secend Panel -->
+            </div>
+        </div><!-- End SideBar-right -->
+        <div class="col-md-8"><!-- Start Content -->
+            <div class="content">
+                <h3>{{idea.idea_title}}</h3><!-- Title Post -->
+                <div class="date-author"><!-- information about date and author  -->
+                    <ul>
+                        <li>
+                            <i class="fa fa-calendar"></i>
+                            منتشر شده : {{idea.idea_published}} 
+                        </li>
+                        <li>
+                            <i class="fa fa-user"></i>
+                            توسط :
+                            <a href="#">{{idea.idea_publisher}}</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="single-text"><!-- Text post -->
+                    
+                    <p>{{idea.idea_conttent|safe}}</p>
+                </div>
+                <div class="bg-hr"></div>
+                <div class="share"><!-- social -->
+                    <h4>
+                        <i class="fa fa-share-alt"></i>
+                        به اشتراک بگذارید :
+                    </h4>
+                    <!-- AddToAny BEGIN -->
 				<div class="a2a_kit a2a_kit_size_32 a2a_default_style" data-a2a-url="{{ request.build_absolute_uri }}" data-a2a-title="این متن را در مداد فشاری بخوانید">
 				<a class="a2a_button_facebook"></a>
 				<a class="a2a_button_twitter"></a>
@@ -23,44 +148,14 @@
 				</script>
 				<script async src="https://static.addtoany.com/menu/page.js"></script>
 				<!-- AddToAny END -->
-				{% if user.is_authenticated %}
-					{% if user.id == idea.created_by.id %}
-						<form action="/editPost/" method="post">
-							{% csrf_token %}
-					    <input name="slug" id="slug" value="{{idea.idea_slug}}" hidden>
-							<input name="created_by" id="created_by" value="{{idea.created_by.id}}" hidden>
-							<input name="title" id="title" value="{{idea.idea_title}}" hidden>
-							<input name="conttent" id="conttent" value="{{idea.idea_conttent}}" hidden>
+                </div><!-- social -->
+            </div>
+        </div><!-- End Content -->
+    </div>
+</section><!-- END - This section is related to single page. -->
 
-					    <button class="btn ">ویرایش</button>
+<div class="clearfix"></div><!-- This tag is for elimination of Floats (Please don’t delete this) -->
 
-					</form>
-					{% endif %}
-				{% endif %}
+<!-- **************** End Content ******************** -->
 
-		      {{idea.idea_conttent|safe}}
-
-		    </div>
-
-		    <div class="col s12 m4 14">
-		    	<ul class="collapsible popout">
-		    		{% for idea in sidebar %}
-
-
-		    			{% if forloop.counter0 == this_idea_idx %}
-		    				<li class="active">
-		    					<div class="collapsible-header">{{idea.idea_title}}<br>(در حال دیدن)</div>
-		    				</li>
-		    			{% else %}
-		    				<li>
-		    					<div class="collapsible-header">{{idea.idea_title}}</div>
-		    					<div class="collapsible-body">
-		    						<p><a href="/{{idea.idea_slug}}"><button class="btn waves-effect waves-light right-align" style="background-color:yellow; color:black">باز کن</button></a></p>
-		    					</div>
-		    				</li>
-		    			{% endif %}
-		    		{% endfor %}
-		    	</ul>
-		    </div>
-	</div>
 {% endblock %}

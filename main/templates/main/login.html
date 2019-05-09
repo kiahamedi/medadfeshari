@@ -1,15 +1,24 @@
 {% extends "main/header.html" %}
 
 {% block content %}
-	<form dir="rtl" method="POST">
-		{% csrf_token %}
-		{{form.as_p}}
 
-		<button class="btn" type="submit">ورود</button>
-	</form>
-	<p dir="rtl">اگر حساب کاربری ندارید، <a href="/register"><strong>ثبت نام</strong></a> کنید</p>
+<!-- **************** Start Content ******************** -->
 
-	<p></p>
+<section class="login"><!-- START - This section is related to our Login Form. -->
+    <div class="container">
+        <form method="POST">
+            {% csrf_token %}
+			{{form.as_p}}
+            <button class="btn" type="submit">ورود</button><!-- Submit Button -->
+            <h5>اگر حساب کاربری ندارید
+                <a href="/register">ثبت نام </a>
+                کنید
+            </h5>
+        </form>
+    </div>
+</section><!-- END - This section is related to our Login Form. -->
 
+<div class="clearfix"></div>
 
+<!-- **************** End Content ******************** -->
 {% endblock %}

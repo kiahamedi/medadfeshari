@@ -1,30 +1,54 @@
-<header dir="rtl">
-    <div class="container">
 
-      <!-- logo -->
-      <a href="/" class="logo">
-        مدادفشاری
-      </a>
-      <!-- end logo -->
-
-      <button type="button" class="menu-button"><img src="./assets/images/menu.png" alt=""></button>
-
-      <!-- menu -->
-      <ul class="menu">
-      	{% if user.is_authenticated %}
-      		<li><a href="/"><span class="text">صفحه اصلی</span></a></li>
-	        <li><a href="/admin"><span class="text"><strong>{{user.username}}</strong></span></a></li>
-	        <li><a href="https://agile-island-30135.herokuapp.com/"><span class="text">اتاق گفتگو</span></a></li>
-	        <li><a href="/logout/"><span class="text">خروج</span></a></li>
-      	{% else %}
-      		<li><a href="/"><span class="text">صفحه اصلی</span></a></li>
-	        <li><a href="/register"><span class="text">عضویت</span></a></li>
-	        <li><a href="/login"><span class="text">ورود</span></a></li>
-	        <li><a href="#"><span class="text">پشت پرده سایت</span></a></li>
-      	{% endif %}
+<header><!-- Start Header -->
+    <div class="header-top">
         
-      </ul>
-      <!-- end menu -->
+            <nav class="navbar navbar-default"><!-- Start Navigation ( menu ) -->
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                                data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#"></a>
+                    </div>
+                    <!-- Collect the nav links , You can add other things like form and ... to it ( but with a little modification) -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
+                        <ul class="nav navbar-nav">
+
+                            <!--
+                            |--------------------------------------------------------------------------
+                            | !! Note :
+                            |--------------------------------------------------------------------------
+                            | If you want to add more than 4 links , you need
+                            | to open this file : css/style.css/
+                            | and edit this line : 59 and decrease it’s font-size.
+                            |
+                            -->
+
+                           {% if user.is_authenticated %}
+                              <li><a href="/">صفحه اصلی</a></li>
+                              <li><a href="/admin"><strong>{{user.username}}</strong></a></li>
+                              <li><a href="https://agile-island-30135.herokuapp.com/">اتاق گفتگو</a></li>
+                              <li><a href="/logout/">خروج</a></li>
+                          {% else %}
+                              <li><a href="/">صفحه اصلی</a></li>
+                              <li><a href="/register">عضویت</a></li>
+                              <li><a href="/login">ورود</a></li>
+                              <li><a href="#">پشت پرده سایت</a></li>
+                          {% endif %}
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+            </nav><!-- /.End navigation -->
+        </div>
     </div>
-</header>
+</header><!-- End Header -->
+
+
+
+      
