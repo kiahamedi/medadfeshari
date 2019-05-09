@@ -1,0 +1,45 @@
+@media screen and (max-width: 1200px) {
+    header .header-top .navbar-nav li a {
+        font-size: 20px;
+    }
+
+    header .header-top .navbar-header .navbar-brand {
+        font-size: 35px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    header .header-top .navbar-nav li a {
+        font-size: 18px;
+    }
+
+    header .header-top .navbar-header .navbar-brand {
+        font-size: 25px;
+        margin-left: 10px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header .header-top .navbar-nav li {
+        text-align: center;
+        display: block;
+        margin: 5px 0;
+    }
+
+    header .header-top .navbar-nav li:after {
+        content: "";
+    }
+
+    .footer-menu ul {
+        display: none;
+    }
+
+    footer .footer-bottom h2 {
+        font: bold 22px vazir !important;
+
+    }
+
+    .single-page .content .date-author ul li {
+        font-size: 11px;
+    }
+}

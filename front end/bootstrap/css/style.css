@@ -1,0 +1,639 @@
+@font-face {
+    font-family: "vazir";
+    src: url('../fonts/woff/Vazir-Medium.woff') format("woff");
+}
+
+body {
+    color: #3f3f3f;
+    font: 20px/24px 'vazir', 'Myriad Pro', Tahoma;
+}
+
+a {
+    color: #555;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+}
+
+header .header-top {
+    margin: 30px 0;
+    clear: both;
+}
+
+header .header-top .navbar-default {
+    border: none;
+    background: #fff;
+}
+
+.navbar-default:hover {
+    color: none;
+}
+
+header .header-top .navbar-nav li {
+    position: relative;
+    display: inline-block;
+    margin: 40px 0;
+    padding: 0 4px;
+}
+
+header .header-top .navbar-nav li i {
+    display: inline-block;
+}
+
+header .header-top .navbar-nav li:after {
+    content: "\f111";
+    font-family: FontAwesome;
+    font-size: 8px;
+    width: 3px;
+    height: 3px;
+    display: inline-block;
+    padding: 15px;
+}
+
+header .header-top .navbar-nav li:last-child:after {
+    display: none;
+}
+
+header .header-top .navbar-nav li a {
+    font-size: 27px;
+    display: inline-block;
+    font-weight: bold;
+    color: #3f3f3f;
+}
+
+nav navbar-nav {
+    float: none;
+}
+
+header .header-top .navbar-nav li a:hover {
+    background: url('../images/pattern/orange0.png');
+
+    background-size: 100% 100%;
+
+}
+
+header .header-top .navbar-header .navbar-brand {
+    font: bold 45px vazir;
+    width: 210px;
+    height: 95px;
+    color: #fff;
+    display: inline-block;
+    margin: 10px 0 0 30px;
+    color: #000;
+    background: url('../images/pattern/logo.png');
+    background-size: 210px;
+}
+
+.start {
+    margin: 40px 0;
+    width: 100%;
+    display: inline-block;
+    height: auto;
+}
+
+.start .start-text p {
+    max-width: 550px;
+    font: 19px vazir;
+    line-height: 50px;
+    text-align: justify;
+}
+
+.start .start-text h3 {
+    float: right;
+    margin: 20px 5px;
+    padding: 10px 60px;
+    font-size: 23px;
+    background: url('../images/pattern/orange1.png');
+    background-size: 100%;
+    transition: all 0.1s ease;
+    -webkit-transition: all 0.1s ease;
+    -moz-transition: all 0.1s ease;
+    -o-transition: all 0.1s ease;
+}
+
+.start .start-text h3:hover {
+    float: right;
+    font-size: 23px;
+    background: url('../images/pattern/white1.png');
+    background-size: 100%;
+    transition: all 0.1s ease;
+    -webkit-transition: all 0.1s ease;
+    -moz-transition: all 0.1s ease;
+    -o-transition: all 0.1s ease;;
+}
+
+.start .start-text a {
+    text-decoration: none;
+    color: #363636;
+}
+
+.start .start-text a:hover {
+    color: #000;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    display: inline-block;
+    height: auto;
+    padding: 70px 0 0;
+    direction: ltr;
+}
+
+.slider .post {
+    width: 100%;
+    height: auto;
+    direction: rtl;
+    color: #888;
+}
+
+.slider .post a:hover {
+    color: #222;
+}
+
+.slider .post a:hover .post-text h3 {
+    color: orange;
+    transition: all .2s ease-in-out;
+}
+
+.slider .post .post-img {
+    display: inline-block;
+    height: 100%;
+}
+
+.slider .post .post-text {
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    padding: 35px;
+}
+
+.slider .post .post-text h3 {
+    font: 24px vazir;
+    color: #757575;
+    font-size: 23px;
+    transition: all .2s ease-in-out;
+}
+
+.slider .post .post-text p {
+    max-width: 530px;
+    max-height: 175px;
+    font: 18px vazir;
+    line-height: 45px;
+    text-align: justify;
+    background: url('../images/pattern/bg-text.png');
+    background-size: 100% 100%;
+}
+
+.slick-next {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    border: none;
+    border-radius: 50%;
+    outline: none;
+    left: 60px;
+    top: -20px;
+}
+
+.slick-next:before {
+    content: "";
+    display: inline-block;
+    font-family: FontAwesome;
+    font-size: 50px;
+    line-height: 70px;
+    width: 90px;
+    height: 76px;
+    top: 0;
+    right: 0;
+    position: absolute;
+    color: #7e7e7e;
+    outline: none;
+    background: url('../images/pattern/next-slide.png') no-repeat;
+
+}
+
+.bg-hr {
+    width: 100%;
+    height: 30px;
+    margin-top: 40px;
+    background: url('../images/pattern/line.png');
+}
+
+.category, .category-page {
+    margin-bottom: 90px;
+}
+
+.category .where-is-it {
+    padding: 80px 0;
+    font: bold 45px vazir;
+}
+
+.category .item, .category-page .item {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    margin-top: 25px;
+    display: inline-block;
+    background: #fff;
+    box-shadow: 0 10px 27px 0 hsla(0, 0%, 82%, .57);
+    -webkit-box-shadow: 0 10px 27px 0 hsla(0, 0%, 82%, .57);
+    -moz-box-shadow: 0 10px 27px 0 hsla(0, 0%, 82%, .57);
+    -o-box-shadow: 0 10px 27px 0 hsla(0, 0%, 82%, .57);
+    overflow: hidden;
+
+}
+
+.category .item .item-img, .category-page .item .item-img {
+    position: relative;
+    width: 100px;
+    height: 100%;
+    float: right;
+    padding: 33px 25px;
+}
+
+.category .item .item-img span, .category-page .item .item-img span {
+    position: absolute;
+    width: 95px;
+    height: 58px;
+    top: 22px;
+    right: 0px;
+    background: url('../images/pattern/orange3.png');
+    background-size: 100% 100%;
+    z-index: 1;
+    display: none;
+    transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+}
+
+.category .item h4, .category-page .item h4 {
+    font: 18px vazir;
+    padding: 6px 0 0;
+    color: #606060;
+}
+
+.category .item p, .category-page .item p {
+    position: absolute;
+    bottom: -4px;
+    right: 90px;
+    font-size: 14px;
+    padding: 0 10px;
+    color: #898989;
+}
+
+.category .item .item-img img, .category-page .item .item-img img {
+    position: relative;
+    z-index: 99;
+}
+
+.category .item:hover, .category-page .item:hover {
+    box-shadow: 0 10px 27px 0 hsla(0, 0%, 82%, 0.80);
+    -webkit-box-shadow: 0 10px 27px 0 hsla(0, 0%, 82%, 0.80);
+    -moz-box-shadow: 0 10px 27px 0 hsla(0, 0%, 82%, 0.80);
+    -o-box-shadow: 0 10px 27px 0 hsla(0, 0%, 82%, 0.80);
+}
+
+.category .item:hover h4, .category-page .item:hover h4 {
+    color: #000;
+}
+
+.category .item:hover .item-img span, .category-page .item:hover .item-img span {
+    display: block;
+    transition: all 0.2s ease;
+}
+
+.category .more {
+    font-size: 26px;
+    padding: 25px 0;
+    width: 100%;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.category .more a {
+    color: #000;
+    padding: 0 20px;
+    background: url('../images/pattern/orange3.png');
+    background-size: 100% 100%;
+    text-decoration: none;
+
+}
+
+.footer-menu ul {
+    list-style: none;
+    margin: 10px 0;
+    padding: 0;
+}
+
+.footer-menu ul li {
+    display: inline-block;
+    padding: 10px 40px;
+}
+
+.footer-menu ul li:hover {
+    background: url('../images/pattern/white2.png');
+    background-size: 100% 100%;
+}
+
+.footer-menu ul li a {
+    text-decoration: none;
+    font-size: 21px;
+    color: #000;
+}
+
+footer {
+    width: 100%;
+    background: #ffc108;
+
+}
+
+footer .footer-bottom {
+    width: 100%;
+    display: inline-block;
+    height: auto;
+    padding: 130px 0;
+}
+
+footer .footer-bottom h2 {
+    font: bold 35px vazir;
+    color: #000;
+}
+
+footer .footer-bottom p {
+    font-size: 23px;
+    line-height: 53px;
+    text-align: justify;
+    margin: 15px 0 35px;
+}
+
+footer .footer-bottom h6 {
+    font-size: 16px;
+    margin: 35px 10px;
+    line-height: 28px;
+    display: inline-block;
+}
+
+.category-page {
+
+}
+
+.category-page h3 {
+    font-size: 32px;
+    display: block;
+    background: url('../images/pattern/orange1.png');
+    background-size: 100% 100%;
+    padding: 5px 30px;
+    text-align: center;
+}
+
+.cat-story .item {
+    overflow: hidden;
+}
+
+.cat-story .item .item-img {
+    padding: 23px 25px;
+}
+
+.cat-story .item h4 {
+    font-size: 15px;
+}
+
+.cat-story .item img
+    /* Single Page Style */
+.single-page {
+    margin-bottom: 70px;
+}
+
+.single-page .sidebar {
+    height: auto;
+
+}
+
+.single-page .sidebar .panel-default {
+    border: none;
+    border-radius: 0;
+}
+
+.single-page .sidebar .panel-heading {
+    background: url('../images/pattern/white1.png');
+    background-size: 100%;
+    border: none;
+}
+
+.single-page .sidebar .panel-heading a {
+    text-decoration: none;
+    width: 100%;
+    padding: 10px;
+}
+
+.single-page .sidebar .panel-default .panel-body ul {
+    list-style: none;
+    padding: 0;
+}
+
+.single-page .sidebar .panel-default .panel-body ul li {
+    font-size: 15px;
+    padding: 3px 25px;
+}
+
+.single-page .sidebar .panel-default .panel-body ul li a {
+    text-decoration: none;
+}
+
+.single-page .sidebar .panel-default .panel-body ul li a:hover {
+    color: #333;
+}
+
+.single-page .sidebar .panel-default .panel-body ul li i {
+    font-size: 18px;
+    vertical-align: middle;
+    padding: 0 5px;
+    color: #979797;
+}
+
+.single-page .sidebar .panel-default .panel-body .like-story {
+    padding: 0;
+    margin: 0;
+}
+
+.single-page .sidebar .panel-default .panel-body .like-story li {
+    position: relative;
+    width: 100%;
+    height: 80px;
+    margin-top: 10px;
+    box-shadow: 0 0 7px 2px #ececec;
+    padding: 0;
+    overflow: hidden;
+    background: #fff;
+}
+
+.single-page .sidebar .panel-default .panel-body .like-story li a {
+    display: flex;
+}
+
+.single-page .sidebar .panel-default .panel-body .like-story li img {
+    width: 80px;
+    height: 80px;
+    float: right;
+    margin-left: 10px;
+    border-left: 1px solid #eee;
+}
+
+.single-page .sidebar .panel-default .panel-body .like-story li h4 {
+    font-size: 15px;
+    display: block;
+    padding: 10px 0 0 5px;
+    margin: 0;
+    line-height: 22px;
+}
+
+.single-page .sidebar .panel-default .panel-body .like-story li h6 {
+    position: absolute;
+    font-size: 12px;
+    text-align: justify;
+    right: 90px;
+    bottom: -4px;
+}
+
+.single-page .sidebar .panel-default .panel-body .like-story li:hover h4 {
+    color: orange;
+}
+
+.single-page .content {
+    height: auto;
+
+}
+
+.single-page .content h3 {
+    text-align: center;
+    font-size: 21px;
+    margin: 0;
+    padding: 7px 20px;
+    background: url('../images/pattern/orange1.png');
+    background-size: 100% 100%;
+}
+
+.single-page .content .date-author ul {
+    list-style: none;
+    display: block;
+    width: 100%;
+}
+
+.single-page .content .date-author ul li {
+    float: right;
+    font-size: 13px;
+    padding: 10px 10px;
+    color: #b3b3b3;
+}
+
+.single-page .content .date-author ul li i {
+    font-size: 15px;
+    padding-left: 5px;
+    color: #8c8c8c;
+
+}
+
+.single-page .content .date-author ul li a {
+    color: #b3b3b3;
+}
+
+.single-page .content p {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    line-height: 35px;
+    text-align: justify;
+}
+
+.single-page .content .single-text img {
+    margin: 15px auto;
+}
+
+.single-page .content .single-text {
+    display: inline-block;
+    margin: 0 auto;
+}
+
+.single-page .content .share {
+    margin-top: 15px;
+}
+
+.single-page .content .share h4 {
+    padding: 5px;
+    float: right;
+}
+
+.single-page .content .share ul {
+    list-style: none;
+    padding: 0;
+    margin: 4px;
+    float: right;
+}
+
+.single-page .content .share ul li {
+    display: inline-block;
+    text-align: center;
+}
+
+.single-page .content .share ul li a {
+    display: inline-block;
+    font-size: 15px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid #ececec;
+    color: #aeaeae;
+    font-size: 18px;
+    margin: 0 auto;
+}
+
+.single-page .content .share ul li a:hover {
+    color: #fff;
+    border: none;
+}
+
+.single-page .content .share ul li .facebook:hover {
+    background: #3b5999;
+}
+
+.single-page .content .share ul li .twitter:hover {
+    background: #55acee;
+}
+
+.single-page .content .share ul li .linkedin:hover {
+    background: #0077B5;
+}
+
+.single-page .content .share ul li .share:hover {
+    background: #00AFF0;
+}
+
+.single-page .content .share ul li .instagram:hover {
+    background: #e4405f;
+}
+
+.single-page .content .share ul li .telegram:hover {
+    background: #1ab7ea;
+}
+
+.ready {
+    font-size: 45px;
+
+    background: url('../images/pattern/white1.png');
+    background-size: 100%;
+}
+
+.register ul {
+
+    margin: 0;
+}
+
+.register ul li {
+    font-size: 15px;
+}
