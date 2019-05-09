@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>مداد فشاری</title>
+    <!-- Include all Css files, or include individual files as needed -->
+    <link rel="stylesheet" href="css/bootstrap.min.css"
+          integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/bootstrap-rtl.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+</head>
+
+<body>
+
+<header><!-- Start Header -->
+    <div class="header-top">
+        <div class="container">
+            <nav class="navbar navbar-default"><!-- Start Navigation ( menu ) -->
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                                data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#"></a>
+                    </div>
+                    <!-- Collect the nav links , You can add other things like form and ... to it ( but with a little modification) -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                        <ul class="nav navbar-nav">
+
+                            <!--
+                            |--------------------------------------------------------------------------
+                            | !! Note :
+                            |--------------------------------------------------------------------------
+                            | If you want to add more than 4 links , you need
+                            | to open this file : css/style.css/
+                            | and edit this line : 59 and decrease it’s font-size.
+                            |
+                            -->
+
+                            <li><a href="#">صفحه اصلی</a></li>
+                            <li><a href="#">ورود</a></li>
+                            <li><a href="#">عضویت</a></li>
+                            <li><a href="#">پشت پرده سایت</a></li>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+            </nav><!-- /.End navigation -->
+        </div>
+    </div>
+    </div>
+</header><!-- End Header -->
+
+<div class="clearfix"></div><!-- This tag is for elimination of Floats (Please don’t delete this) -->
+
+<!-- **************** Header Finish ******************** -->
+
+<!-- **************** Start Content ******************** -->
+
+<section class="single-page"><!-- Start - This section is related to single page. -->
+    <div class="container">
+        <div class="col-md-4"><!-- Start SideBar-right -->
+            <div class="sidebar">
+                <!--
+                |--------------------------------------------------------------------------
+                | !! Note :
+                |--------------------------------------------------------------------------
+                | This should only be shown to managers and writers of each story
+                | if you don’t want to use it then comment it .
+                -->
+                <div class="single-manager-box"><!-- author Panel -->
+                    <div class="panel-gruop">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><a href="#collapse1" data-toggle="collapse">ابزار های
+                                    نویسنده</a></h3>
+                            </div>
+                            <div id="collapse1" class="panel-collapse collapse in">
+                                <div class="panel-body">
+                                    <ul>
+                                        <!--
+                                        |--------------------------------------------------------------------------
+                                        | !! Note :
+                                        |--------------------------------------------------------------------------
+                                        | If you want to add more features , Make a copy of each li tag and link
+                                        it to the page you want - and for setting related icon visit this
+                                        | website => https://fontawesome.com/icons
+                                        -->
+                                        <li>
+                                            <i class="fa fa-edit"></i>
+                                            <a href="#">ویرایش</a>
+
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-trash"></i>
+                                            <a href="#">حذف</a>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-envelope"></i>
+                                            <a href="#">پیام به نویسنده</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- author Panel -->
+                <div class="panel-gruop"><!-- secend Panel -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><a href="#collapse2" data-toggle="collapse">داستان های مشابه</a>
+                            </h3>
+                        </div>
+                        <div id="collapse2" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <ul class="like-story">
+                                    <!--
+                                       |Each li Tage below is one of our post :
+                                       |( all you need to do is to put one of the posts in the | FOR or FOREACH | and erase the rest)
+                                    -->
+                                    <li><!-- Start Post -->
+                                        <a href="">
+                                            <img src="images/image02.png" alt="">
+                                            <h4>برنامه نویس چیست یا کیست ؟</h4>
+                                            <h6>نویسنده : شهاب کریمی فر</h6>
+                                        </a>
+                                    </li><!-- END Post -->
+                                    <li>
+                                        <a href="">
+                                            <img src="images/image03.png" alt="">
+                                            <h4>چگونه یک برنامه نویس شدم </h4>
+                                            <h6>نویسنده : کیا احمدی</h6>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            <img src="images/image01.png" alt="">
+                                            <h4>هشت راز برنامه نویسان</h4>
+                                            <h6>نویسنده : علی ضیا</h6>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            <img src="images/image05.png" alt="">
+                                            <h4>طراحی وب یا گرافیست ؟</h4>
+                                            <h6>نویسنده : شهاب کریمی فر</h6>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- secend Panel -->
+            </div>
+        </div><!-- End SideBar-right -->
+        <div class="col-md-8"><!-- Start Content -->
+            <div class="content">
+                <h3>چگونه به یک برنامه نویس تبدیل شویم ؟</h3><!-- Title Post -->
+                <div class="date-author"><!-- information about date and author  -->
+                    <ul>
+                        <li>
+                            <i class="fa fa-calendar"></i>
+                            منتشر شده : 6 آوریل 2019 , ساعت 11:46
+                        </li>
+                        <li>
+                            <i class="fa fa-user"></i>
+                            توسط :
+                            <a href="#">کیا حامدی</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="single-text"><!-- Text post -->
+                    <img src="images/image03.png" class="img-responsive text-center" alt=""><!-- Image for Post -->
+                    <p>طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و
+                        کلی طرح سفارش گرفته شده استفاده می نماید، تا از نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و
+                        ظاهر متن باشد. معمولا طراحان گرافیک برای صفحه‌آرایی، نخست از متن‌های آزمایشی و بی‌معنی استفاده
+                        می‌کنند تا صرفا به مشتری یا صاحب کار خود نشان دهند که صفحه طراحی یا صفحه بندی شده بعد از اینکه
+                        متن در آن قرار گیرد چگونه به نظر می‌رسد و قلم‌ها و اندازه‌بندی‌ها چگونه در نظر گرفته شده‌است. از
+                        آنجایی که طراحان عموما نویسنده متن نیستند و وظیفه رعایت حق تکثیر متون را ندارند و در همان حال
+                        کار آنها به نوعی وابسته به متن می‌باشد آنها با استفاده از محتویات ساختگی، صفحه گرافیکی خود را
+                        صفحه‌آرایی می‌کنند تا مرحله طراحی و صفحه‌بندی را به پایان برند.
+                        طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و
+                        کلی طرح سفارش گرفته شده استفاده می نماید، تا از نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و
+                        ظاهر متن باشد. معمولا طراحان گرافیک برای صفحه‌آرایی، نخست از متن‌های آزمایشی و بی‌معنی استفاده
+                        می‌کنند تا صرفا به مشتری یا صاحب کار خود نشان دهند که صفحه طراحی یا صفحه بندی شده بعد از اینکه
+                        متن در آن قرار گیرد چگونه به نظر می‌رسد و قلم‌ها و اندازه‌بندی‌ها چگونه در نظر گرفته شده‌است. از
+                        آنجایی که طراحان عموما نویسنده متن نیستند و وظیفه رعایت حق تکثیر متون را ندارند و در همان حال
+                        کار آنها به نوعی وابسته به متن می‌باشد آنها با استفاده از محتویات ساختگی، صفحه گرافیکی خود را
+                        صفحه‌آرایی می‌کنند تا مرحله طراحی و صفحه‌بندی را به پایان برند.</p>
+                </div>
+                <div class="bg-hr"></div>
+                <div class="share"><!-- social -->
+                    <h4>
+                        <i class="fa fa-share-alt"></i>
+                        به اشتراک بگذارید :
+                    </h4>
+                    <ul>
+                        <li><!-- Facebook -->
+                            <a href="" class="facebook">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li><!-- twitter -->
+                            <a href="" class="twitter">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li><!-- linkedin -->
+                            <a href="" class="linkedin">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        </li>
+                        <li><!-- share -->
+                            <a href="" class="share">
+                                <i class="fa fa-share"></i>
+                            </a>
+                        </li>
+                        <li><!-- instagram -->
+                            <a href="" class="instagram">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li><!-- telegram -->
+                            <a href="" class="telegram">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div><!-- social -->
+            </div>
+        </div><!-- End Content -->
+    </div>
+</section><!-- END - This section is related to single page. -->
+
+<div class="clearfix"></div><!-- This tag is for elimination of Floats (Please don’t delete this) -->
+
+<!-- **************** End Content ******************** -->
+
+<!-- **************** START Footer ******************** -->
+
+<div class="footer-menu text-center"><!-- START - This is Footer menu -->
+    <ul>
+        <li><a href="#">صفحه اصلی</a></li>
+        <li><a href="#">ورود</a></li>
+        <li><a href="#">عضویت</a></li>
+        <li><a href="#">پشت پرده سایت</a></li>
+    </ul>
+</div><!-- END - This is Footer menu -->
+
+<div class="clearfix"></div><!-- This tag is for elimination of Floats (Please don’t delete this) -->
+
+<footer>
+    <div class="container">
+        <div class="footer-bottom">
+            <div class="col-md-5">
+                <img src="images/image06.png" class="img-responsive" alt="">
+            </div>
+            <div class="col-md-7">
+                <h2>کل پروژه رو گذاشتیم توی گیت میت</h2>
+                <p>خفن مفن نیستیم ولی همه چیزو میزاریم توی یک کتابخونه بزرگ کد مود که اگه یکی فکر کردی میتونست به ما کمک
+                    کنه یا یک چیز بهتری خلق ملق کنه داشته باشش </p>
+                <a href=""><img src="images/pattern/github-logo.png" alt=""></a><!-- link Github -->
+                <h6> پیاده سازی با نسخه ۲.۱.۵ فریمورک جنگو © 2019 تمام حقوق مطالب منتشر شده برای نگارنده مطلب محفوظ
+                    میباشد. </h6>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery.js"></script>
+<!-- Include all compiled js plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+<script src="js/slick.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>
+
+<!-- **************** END Footer ******************** -->
