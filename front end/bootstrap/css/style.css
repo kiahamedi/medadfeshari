@@ -5,7 +5,7 @@
 
 body {
     color: #3f3f3f;
-    font: 20px/24px 'vazir', 'Myriad Pro', Tahoma;
+    font: 15px/24px 'vazir', 'Myriad Pro', Tahoma;
 }
 
 a {
@@ -133,49 +133,53 @@ header .header-top .navbar-header .navbar-brand {
     color: #000;
 }
 
+/*Sliser */
+
 .slider {
     position: relative;
     width: 100%;
     display: inline-block;
     height: auto;
     padding: 70px 0 0;
-    direction: ltr;
 }
-
-.slider .post {
+.slider .post-text{
+    display: inline-block;
     width: 100%;
-    height: auto;
-    direction: rtl;
-    color: #888;
+    text-align: right;
 }
-
-.slider .post a:hover {
+.slider .post-text h4{
+    font-size: 25px;
+    padding-right: 20px;
+    transition: all .2s ease-in-out;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+}
+.slider .post-text p{
+    max-width: 550px;
+    font: 19px vazir;
+    line-height: 50px;
+    max-height: 175px;
+    text-align: justify;
+    margin: 0;
+    direction: rtl;
+    float: right;
+    padding: 20px;
+    background: url('../images/pattern/white2.png');
+    background-size: 100% 100%;
+}
+.slider .item a:hover {
     color: #222;
 }
 
-.slider .post a:hover .post-text h3 {
+.slider .item a:hover .post-text h4 {
     color: orange;
     transition: all .2s ease-in-out;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
 }
 
-.slider .post .post-img {
-    display: inline-block;
-    height: 100%;
-}
-
-.slider .post .post-text {
-    position: relative;
-    display: inline-block;
-    height: 100%;
-    padding: 35px;
-}
-
-.slider .post .post-text h3 {
-    font: 24px vazir;
-    color: #757575;
-    font-size: 23px;
-    transition: all .2s ease-in-out;
-}
 
 .slider .post .post-text p {
     max-width: 530px;
@@ -187,35 +191,9 @@ header .header-top .navbar-header .navbar-brand {
     background-size: 100% 100%;
 }
 
-.slick-next {
-    position: relative;
-    width: 70px;
-    height: 70px;
-    text-align: center;
-    border: none;
-    border-radius: 50%;
-    outline: none;
-    left: 60px;
-    top: -20px;
+.owl-carousel{
+    direction: ltr;
 }
-
-.slick-next:before {
-    content: "";
-    display: inline-block;
-    font-family: FontAwesome;
-    font-size: 50px;
-    line-height: 70px;
-    width: 90px;
-    height: 76px;
-    top: 0;
-    right: 0;
-    position: absolute;
-    color: #7e7e7e;
-    outline: none;
-    background: url('../images/pattern/next-slide.png') no-repeat;
-
-}
-
 .bg-hr {
     width: 100%;
     height: 30px;
