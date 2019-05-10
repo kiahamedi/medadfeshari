@@ -2,10 +2,14 @@
     font-family: "vazir";
     src: url('../fonts/woff/Vazir-Medium.woff') format("woff");
 }
-
+img{
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
 body {
     color: #3f3f3f;
-    font: 15px/24px 'vazir', 'Myriad Pro', Tahoma;
+    font: 20px/24px 'vazir', 'Myriad Pro', Tahoma;
 }
 
 a {
@@ -156,16 +160,18 @@ header .header-top .navbar-header .navbar-brand {
     -o-transition: all .2s ease-in-out;
 }
 .slider .post-text p{
-    max-width: 550px;
+	max-width: 578px;
+    height: auto;
     font: 19px vazir;
+    display: inline-block;
     line-height: 50px;
     max-height: 175px;
     text-align: justify;
-    margin: 0;
+    margin-bottom: 30px;
     direction: rtl;
     float: right;
     padding: 20px;
-    background: url('../images/pattern/white2.png');
+    background: url(../images/pattern/bg-text.png);
     background-size: 100% 100%;
 }
 .slider .item a:hover {
