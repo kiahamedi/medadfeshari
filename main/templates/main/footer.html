@@ -16,12 +16,13 @@
         {% if user.is_authenticated %}
           <li><a href="/admin"><strong>{{user.username}}</strong></a></li>
           <li><a href="https://agile-island-30135.herokuapp.com/">اتاق گفتگو</a></li>
+          <li><a href="mailto:kia.arta9793@gmail.com?subject=medadfeshari">تماس با ما</a></li>
           <li><a href="/logout/">خروج</a></li>
 
       {% else %}
           <li><a href="/login">ورود</a></li>
           <li><a href="/register">عضویت</a></li>
-          <li><a href="mailto:kia.arta9793@gmail.com?subject=medadfeshari">ارسال ایمیل</a></li>
+          <li><a href="mailto:kia.arta9793@gmail.com?subject=medadfeshari">تماس با ما</a></li>
           <li><a href="https://www.aparat.com/v/SvsJR">ویدیو آموزشی</a></li>
       {% endif %}
     </ul>

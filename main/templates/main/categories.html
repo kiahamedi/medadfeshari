@@ -41,36 +41,34 @@
 
 <div class="clearfix"></div><!-- This tag is for elimination of Floats (Please don’t delete this) -->
 
+
 <section class="slider"><!-- START - This Section is the Sliders. -->
     <div class="container">
-        <div class="all-post">
-            <!--
-                |Each div below is one of our sliders :
-                |( all you need to do is to put one of the posts in the | FOR or FOREACH | and erase the rest)
-            -->
-  {% for idea in Ideas %}
-    {% if forloop.counter <= 12 %}
-            <div class="post"><!-- START POST -->
+        <!--
+            |Each div below is one of our sliders :
+            |( all you need to do is to put one of the posts in the | FOR or FOREACH | and erase the rest)
+        -->
+        <div id="owl-example" class="owl-carousel">
+            {% for idea in Ideas %}
+                {% if forloop.counter <= 12 %}
+            <div class="item"><!-- START POST -->
                 <a href="/{{idea.idea_slug}}">
                     <div class="col-sm-4 post-img">
                         <img src="{% static 'main/images/image02.png' %}" class="img-responsive" alt="">
-                    </div>
-                    <div class="col-sm-8 post-text">
-                        <h3>{{idea.idea_title}}</h3>
-                        <p>این {{idea.idea_series}} توسط {{idea.idea_publisher}} نوشته شده است، برای خوندنش میتونی اونو انتخاب کنی یا برو بعدی رو بزن و بعدیا رو ببین</p>
+                    </div>  
+                    <div class="col-sm-8">                                        
+                        <div class="post-text">
+                            <h4>{{idea.idea_title}}</h4>
+                        <p>این {{idea.idea_series}} توسط {{idea.idea_publisher}} نوشته شده است، برای خوندنش میتونی اونو انتخاب کنی یا برو بعدی و بعدیا رو ببین</p>
+                        </div>                                                              
                     </div>
                 </a>
             </div><!-- END POST -->
-        {% endif %}
-    {% endfor %}
-           
-        </div>
-
+                {% endif %}
+            {% endfor %}
+        </div>           
     </div>
 </section><!-- END - This Section is the Slider. -->
-
-
-
 
 
 <!--
