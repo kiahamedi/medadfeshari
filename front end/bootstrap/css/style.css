@@ -621,3 +621,128 @@ footer .footer-bottom h6 {
 .register ul li {
     font-size: 15px;
 }
+
+.backend .step{
+    height: auto;
+    overflow: hidden;
+    padding: 15px 0 30px;
+    border-bottom: 1px solid #eee;
+}
+.backend .step .images img{
+    border-radius: 50%;
+}
+.backend .step .description{    
+    display: inline-block;    
+}
+.backend .step .description h4{
+    float: right;
+    font-size: 18px;
+    display: block;
+    padding: 8px 50px;    
+    color: #333;    
+    text-align: center;
+    background: url('../images/pattern/orange1.png');
+    background-size: auto;
+    background-size: 100% 100%;
+}
+.backend .step .description p{
+    float: right;
+    display: inline-block;
+    text-align: justify;    
+    line-height: 32px;
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.backend .step .author{    
+    width: 100%;
+    height: auto;
+    border-top: 1px solid #eee;    
+}
+.backend .step .author > ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.backend .step .author > ul > li{
+    width: 100%;
+    height: auto;    
+    display: inline-block;
+    background: #f8f8f8;
+    border-radius: 10px;
+    border: 1px solid #eee;
+    margin: 10px 0 0 0; 
+}
+
+.backend .step .author > ul > li > img{    
+    height: 70px;
+    float: right;
+    margin-left: 15px;
+    border-radius: 0 10px 10px 0;
+}
+.backend .step .author > ul > li > h6{    
+    width: 100%;
+    font-size: 14px;
+    margin: 0;
+    padding: 10px 0 3px 0;
+}
+
+.backend .step .author > ul > li .link{
+    margin: 5px 0 0 0;
+    padding: 0;
+    list-style: none;
+    float: right;
+}
+
+.backend .step .author > ul > li .link li{    
+    background: #fff;
+    border: 1px solid #ddd;
+    float: right;
+    margin: 3px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+}
+.backend .step .author > ul > li .link li:hover{
+    transition: all 0.3s ease;
+    text-decoration: none;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    color: #fff;
+}
+.backend .step .author > ul > li .link .github:hover{
+    background: #333;
+    color: #fff;
+}
+.backend .step .author > ul > li .link .linkedin:hover{
+    background: #0077b5;
+    color: #fff;
+}
+.backend .step .author > ul > li .link .website:hover{
+    background: #0f9d58;
+}
+.backend .step .author > ul > li .link .instagram:hover{
+    background: #3f729b;
+}
+.backend .step .author > ul > li .link .email:hover{
+    background: #1ab7ea;
+}
+.backend .step .author > ul > li .link .website:hover a , .backend .step .author > ul > li .link .linkedin:hover a , .backend .step .author > ul > li .link .github:hover a ,.backend .step .author > ul > li .link .email:hover a , .backend .step .author > ul > li .link .instagram:hover a{
+    color: #fff;
+}
+.backend .step .author > ul > li .link i{
+    font-size: 18px;
+    vertical-align: middle;
+    float: right;
+    margin: 4px 5px 5px 0px;
+}
+.backend .step .author > ul > li .link li a{
+    font-size: 13px;
+    text-decoration: none;
+    padding: 0 8px 0;
+
+}
