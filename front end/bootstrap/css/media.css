@@ -53,6 +53,9 @@
 	.slider .post-text h4{
 		font-size: 20px;
 	}
+    .backend .step .images img{
+        margin: 0 auto ;
+    }    
 }
 @media screen and (max-width: 360px){
 	.start .start-text h3{
