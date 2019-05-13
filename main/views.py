@@ -165,5 +165,8 @@ def single_slug(request,single_slug):
 	return HttpResponse(str(single_slug) + " dose not correspomd to anything.")
 
 
+def backstage(request):
+	return render(request, 'main/Backstage.html', {})
+
 def index(request):
     return render(request, 'node-chat-app/public/index.html', {})

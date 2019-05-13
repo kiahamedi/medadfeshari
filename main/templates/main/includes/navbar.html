@@ -32,15 +32,16 @@
                             -->
 
                            {% if user.is_authenticated %}
-                              <li><a href="/">صفحه اصلی</a></li>
-                              <li><a href="/admin"><strong>{{user.username}}</strong></a></li>
+                              <!--<li><a href="/">صفحه اصلی</a></li>-->
+                              <li><a href="/admin"><strong>ناحیه کاربری</strong></a></li>
                               <li><a href="https://agile-island-30135.herokuapp.com/">اتاق گفتگو</a></li>
+                              <li><a href="/backstage/">پشت پرده سایت</a></li>
                               <li><a href="/logout/">خروج</a></li>
                           {% else %}
-                              <li><a href="/">صفحه اصلی</a></li>
+                              <!--<li><a href="/">صفحه اصلی</a></li>-->
                               <li><a href="/register">عضویت</a></li>
                               <li><a href="/login">ورود</a></li>
-                              <!--<li><a href="#">پشت پرده سایت</a></li>-->
+                              <li><a href="/backstage/">پشت پرده سایت</a></li>
                           {% endif %}
                         </ul>
                     </div><!-- /.navbar-collapse -->

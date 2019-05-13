@@ -26,6 +26,7 @@ urlpatterns = [
 	path("login/",views.login_request,name="login"),
     path("chat/",views.index,name="index"),
     path("editPost/",views.editPost,name="editPost"),
+    path("backstage/",views.backstage,name="backstage"),
     path("editPostDone/",views.editPostDone,name="editPostDone"),
     path("<single_slug>",views.single_slug,name="single_slug"),
 

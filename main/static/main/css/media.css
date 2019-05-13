@@ -42,4 +42,28 @@
     .single-page .content .date-author ul li {
         font-size: 11px;
     }
+	.start .start-text h3{
+		font-size:20px;		
+	}
+	.slider .post-text p{
+		margin-bottom: 85px;
+		font-size:17px;
+		line-height: 40px;
+	}
+	.slider .post-text h4{
+		font-size: 20px;
+	}
+    .backend .step .images img{
+        margin: 0 auto ;
+    }    
+}
+@media screen and (max-width: 360px){
+	.start .start-text h3{
+		font-size:20px;
+		padding:10px 40px;
+	}
+	.slider .post-text p{
+		margin-bottom: 130px;
+	}
+	
 }
