@@ -29,6 +29,9 @@ urlpatterns = [
     path("backstage/",views.backstage,name="backstage"),
     path("editPostDone/",views.editPostDone,name="editPostDone"),
     path("<single_slug>",views.single_slug,name="single_slug"),
+    path('zarinpal/request/', views.send_request, name='request'),
+    path('zarinpal/verify/', views.verify , name='verify'),
+    path("donate/",views.donate,name="donate"),
 
 
 ]

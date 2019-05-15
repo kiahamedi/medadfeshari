@@ -56,6 +56,10 @@
     .backend .step .images img{
         margin: 0 auto ;
     }    
+    .donat .supporters table{
+    font-size: 12px;
+    margin: 15px 0;
+}
 }
 @media screen and (max-width: 360px){
 	.start .start-text h3{
@@ -65,5 +69,9 @@
 	.slider .post-text p{
 		margin-bottom: 130px;
 	}
+    .donat .supporters table{
+    font-size: 11px;
+    margin: 15px 0;
+}
 	
 }

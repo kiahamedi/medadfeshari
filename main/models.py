@@ -59,3 +59,15 @@ class MyIdea(models.Model):
 
 
 
+class Donate(models.Model):
+	name_donate = models.CharField(max_length=200)
+	email_donate = models.CharField(max_length=200)
+	amount_donate = models.CharField(max_length=200)
+	transaction_code_donate = models.CharField(max_length=200)
+	transaction_status_donate = models.CharField(max_length=200)
+
+	class Meta:
+		verbose_name_plural = _("حمایت های مالی")
+
+	def __str__(self): 
+		return self.name_donate+" | "+self.amount_donate
