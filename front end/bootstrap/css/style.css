@@ -746,3 +746,42 @@ footer .footer-bottom h6 {
     padding: 0 8px 0;
 
 }
+.donat-icon{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 480px;
+    left: 0;
+    z-index: 9999;
+}
+.donat-icon a img{    
+    width: 116px;
+    float: left;
+
+}
+.donat .myform{    
+    margin: 40px 0 65px;
+}
+.donat p{
+    font-size: 15px;
+    line-height: 30px;
+    text-align: justify;
+    margin: 20px 0;
+}
+.donat .btn-support{
+    margin: 10px 0;
+}
+
+.donat .supporters table{
+    font-size: 14px;
+    margin: 15px 0;
+}
+.donat .support-table{
+    display: none;
+}
+.donat .messagebox{
+    display: none;
+}
+.donat .messagebox h5{
+    color: red;
+}
