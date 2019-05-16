@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.shortcuts import render, redirect
-from .models import MyIdea, IdeaSeries, IdeaCategory
+from .models import MyIdea, IdeaSeries, IdeaCategory , Donate
 from django.http import HttpResponse
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, logout, authenticate
@@ -11,6 +11,82 @@ from django.utils.translation import ugettext_lazy as _
 
 from django.utils.safestring import mark_safe
 import json
+
+from django.shortcuts import redirect
+from zeep import Client
+
+
+
+
+MERCHANT = '*************-********-**********'
+client = Client('https://www.zarinpal.com/pg/services/WebGate/wsdl')
+#amount_input = 0  # Toman / Required
+description = "توضیحات مربوط به تراکنش را در این قسمت وارد کنید"  # Required
+email = 'kia.arta9793@gmail.com'  # Optional
+mobile = '09145480798'  # Optional
+CallbackURL = 'http://localhost:8000/zarinpal/verify/' # Important: need to edit for realy server.
+
+def send_request(request):
+	amount_input = request.POST.get("amount")
+	name_input = request.POST.get("nameinput")
+	email_input = request.POST.get("emailinput")
+	if amount_input == "" or name_input == "" or email_input == "":
+		messages.warning(request, _("پر کردن تمامی فیلدها الزامی است"))
+		return render(request, 'main/donate.html', {})
+
+	result = client.service.PaymentRequest(MERCHANT, amount_input, description, email, mobile, CallbackURL)
+	if result.Status == 100:
+		userDonate = Donate()
+		userDonate.name_donate = request.POST.get("nameinput")
+		userDonate.email_donate = request.POST.get("emailinput")
+		userDonate.amount_donate = request.POST.get("amount")
+		userDonate.transaction_code_donate = "str(result.RefID)"
+		userDonate.transaction_status_donate = "str(result.Status)"
+		userDonate.save()
+		return redirect('https://www.zarinpal.com/pg/StartPay/' + str(result.Authority))
+	else:
+		#return HttpResponse('Error code: ' + str(result.Status))
+		messages.warning(request, _("کمترین مقدار حمایت باید 100 تومان باشد"))
+		return render(request, 'main/donate.html', {})
+
+def verify(request):
+	if request.GET.get('Status') == 'OK':
+		userDonate = Donate.objects.latest('id')
+		amount_input = userDonate.amount_donate
+		#amount_input = request.POST.get("amount")
+		result = client.service.PaymentVerification(MERCHANT, request.GET['Authority'], amount_input)
+		if result.Status == 100:
+			#return HttpResponse('Transaction success.\nRefID: ' + str(result.RefID))
+			userDonate = Donate.objects.latest('id')
+			userDonate.transaction_code_donate = str(result.RefID)
+			userDonate.transaction_status_donate = str(result.Status)
+			userDonate.save()
+			messages.success(request, _("ممنون از حمایت شما دوست گرامی\nکد تراکنش شما: " + str(result.RefID)))
+			return render(request, 'main/donate.html', {})
+		elif result.Status == 101:
+			#return HttpResponse('Transaction submitted : ' + str(result.Status))
+			userDonate = Donate.objects.latest('id')
+			userDonate.transaction_code_donate = str(result.RefID)
+			userDonate.transaction_status_donate = str(result.Status)
+			userDonate.save()
+			messages.success(request, _("تراکنش شما انجام شد: " + str(result.Status)))
+			return render(request, 'main/donate.html', {})
+		else:
+			#return HttpResponse('Transaction failed.\nStatus: ' + str(result.Status))
+			userDonate = Donate.objects.latest('id')
+			#userDonate.transaction_code_donate = str(result.RefID)
+			userDonate.transaction_status_donate = str(result.Status)
+			userDonate.save()
+			messages.error(request, _("تراکنش شما ناموفق بود: " + str(result.Status)))
+			return render(request, 'main/donate.html', {})
+	else:
+		#return HttpResponse('Transaction failed or canceled by user')
+		userDonate = Donate.objects.latest('id')
+		userDonate.transaction_code_donate = "str(result.RefID)"
+		userDonate.transaction_status_donate = "canceled"
+		userDonate.save()
+		messages.error(request, _("تراکنش شما انجام نشد یا توسط خودتان لغو گردید"))
+		return render(request, 'main/donate.html', {})
 
 
 def homepage(request):
@@ -27,7 +103,7 @@ def editPost(request):
 			print(request.POST)
 			slug_edit = request.POST.get("slug")
 			slug_title = request.POST.get("title")
-			slug_content = request.POST.get("conttent")
+			
 			print("url"+str(slug_edit)+"title:"+str(slug_title)+"content"+str(slug_content))
 			return render(request,"main/editPost.html",
 			context={"slugedit":slug_edit,
@@ -164,6 +240,16 @@ def single_slug(request,single_slug):
 
 	return HttpResponse(str(single_slug) + " dose not correspomd to anything.")
 
+
+def backstage(request):
+	return render(request, 'main/Backstage.html', {})
+
+def donate(request):
+
+	query_results = Donate.objects.all()
+	print(query_results)
+
+	return render(request, 'main/donate.html', context={"alldonate":query_results})
 
 def index(request):
     return render(request, 'node-chat-app/public/index.html', {})

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.contrib import admin
-from .models import MyIdea , IdeaSeries , IdeaCategory
+from .models import MyIdea , IdeaSeries , IdeaCategory,Donate
 from tinymce.widgets import TinyMCE
 from django.db import models
 
@@ -54,3 +54,5 @@ admin.site.register(IdeaSeries)
 admin.site.register(IdeaCategory)
 
 admin.site.register(MyIdea,MyIdeaAdmin)
+
+admin.site.register(Donate)

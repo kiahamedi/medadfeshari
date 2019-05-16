@@ -1,17 +1,43 @@
 {% if messages %}
 	{% for message in messages %}
 		{% if message.tags == 'success' %}
-			<script>M.toast({html: "{{message}}",classes: 'green rounded',
-			displayLengyh:2000});</script>
+		
+			<!-- alert success -->
+			<div class="container fadeoutalertsuc">
+	            <div class="alert alert-success fade in">                
+	                <a href="#" class="close" data-dismiss="alert" arial-lable="close">&times;</a>
+	                <p>{{message}}</p>
+	            </div>
+            </div>
+            <!-- alert success -->
 		{% elif message.tags == 'info' %}
-			<script>M.toast({html: "{{message}}",classes: 'blue rounded',
-			displayLengyh:2000});</script>
+			<!-- alert information -->
+			<div class="container fadeoutalertinfo">
+	            <div class="alert alert-info fade in">
+	                <a href="#" class="close" data-dismiss="alert" arial-lable="close">&times;</a>
+	                <p>{{message}}</p>
+	            </div>
+            </div>
+            <!-- alert information -->
 		{% elif message.tags == 'warning' %}
-			<script>M.toast({html: "{{message}}",classes: 'orange rounded',
-			displayLengyh:2000});</script>
+			<!-- alert warning -->
+			<div class="container fadeoutalertwarnin">
+	            <div class="alert alert-warning fade in">
+	                <a href="#" class="close" data-dismiss="alert" arial-lable="close">&times;</a>
+	                <p>{{message}}</p>
+	            </div>
+            </div>
+            <!-- alert warning -->    
 		{% elif message.tags == 'error' %}
-			<script>M.toast({html: "{{message}}",classes: 'red rounded',
-			displayLengyh:2000});</script>
+			 <!-- alert danger -->
+			 <div class="container fadeoutalerterror">
+	            <div class="alert alert-danger fade in">
+	                <a href="#" class="close" data-dismiss="alert" arial-lable="close">&times;</a>
+	                <p>{{message}}</p>
+	            </div>
+            </div>
+            <!-- alert danger -->
+            
 		{% endif %}
 	{% endfor %}
 {%  endif %}
