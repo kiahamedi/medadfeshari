@@ -2,15 +2,30 @@
 
 {% block content %}
 
-	<form dir="rtl" method="POST">
-		{% csrf_token %}
-		{{form.as_p}}
-		
-		<button class="btn" type="submit">ثبت نام</button>
-	</form>
+<!-- **************** Start Content ******************** -->
 
-	<p dir="rtl">اگر شما قبلا یک حساب کاربری دارید، <a href="/login"><strong>ورود</strong></a> را بزنید</p> 
-	<h1>  </h1>
+<section class="register"><!-- START - This section is related to our Register Form. -->
+    <div class="container">
+        <form method="POST"><!-- FORM -->
+            {% csrf_token %}
+            {{form.as_p}}
+            <button class="btn" type="submit">ثبت نام</button>
 
-{% endblock %}       
+            <div class="col-md-12"><!-- Ssubmit Form -->
+                <div class="form-group">
+                   
+                    <h5>
+                        اگر شما قبلا یک حساب کاربری دارید
+                        <a href="/login">وارد شوید</a>
+                    </h5>
+                </div>
+            </div><!-- Ssubmit Form -->
+        </form>
+    </div>
+</section><!-- END - This section is related to our Register Form. -->
 
+<div class="clearfix"></div><!-- This tag is for elimination of Floats (Please don’t delete this) -->
+
+<!-- **************** End Content ******************** -->
+
+{% endblock %} 

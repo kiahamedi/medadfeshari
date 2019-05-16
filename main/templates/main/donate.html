@@ -1,0 +1,72 @@
+{% extends "main/header.html" %}
+{% load staticfiles %}
+{% block content %}
+
+<!-- **************** Start Content ******************** -->
+
+    <section class="donat ">
+        <div class="container">
+            <div class="col-md-8 col-md-offset-2 ">
+               
+                
+                <p>اگر در مدادفشاری لحظات شاد و خاطره انگیزی داشتید و تمایل دارید به نیازمندی کمک و جزوی از فرشته ها باشید خوشحال میشویم از ما حمایت کنید تا بتوانیم این مسیر را ادامه و قسمتی از حمایت های شما را برای سرور و دامین مابقی را برای کمک به نیازمندان هزینه کنیم. همچنین رسید حمایت های شما عزیزان از مردم نیازمند را نیز در این مکان قرار میدهیم.
+                    <br>
+                    با تشکر تیم توسعه دهندگان مدادفشاری
+                </p>
+                <div class="myform">
+                    <form action="/zarinpal/request/" method="post" class="text-center" id="form">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <input type="number" class="form-control" name="amount" id="amount" pattern="[1-9]{1,15}" placeholder="میزان کمک به تومان">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="nameinput" id="nameinput" placeholder="نام و نام خانوادگی">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" name="emailinput" id="emailinput" placeholder="ایمیل">
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-success col-xs-12" id="submitinput" value="حامی میشم"></input>
+                        </div>
+                    </form>
+                </div>
+                <div class="messagebox">
+                    <h5>لطفا تمامی موارد را تکمیل کنید</h5>
+                </div>
+                <div class="supporters">                
+                    <a class="btn btn-info btn-support">نمایش حامیان</a>
+                    <div class="support-table">
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>نام و نام خانوادگی</th>
+                                    <th>میزان پرداخت</th>
+                                    <th>شماره تراکنش</th>
+                                </tr>                            
+                            </thead>
+                            <tbody>
+                                {% for item in alldonate %}
+                                    {% if item.transaction_code_donate != "str(result.RefID)" %}
+                                        <tr>
+                                            <td>{{ item.id }}</td>
+                                            <td>{{ item.name_donate }}</td>
+                                            <td>{{ item.amount_donate }} تومان</td>
+                                            <td>{{ item.transaction_code_donate }}</td>
+                                        </tr> 
+                                    {% endif %}  
+                                {% endfor %}                           
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+<div class="clearfix"></div>
+
+<!-- **************** End Content ******************** -->
+
+ {% endblock %}  

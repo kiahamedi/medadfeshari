@@ -1,67 +1,142 @@
 {% extends "main/header.html" %}
 {% load staticfiles %}
-</script>
 {% block content %}
 
 
+<div class="clearfix"></div><!-- This tag is for elimination of Floats (Please don’t delete this) -->
 
-<!-- section 02 -->
-  <section class="section section-02">
+<!-- **************** Header Finish ******************** -->
+
+<!-- **************** Start Content ******************** -->
+
+<div class="clearfix"></div><!-- This tag is for elimination of Floats (Please don’t delete this) -->
+
+<section class="start" ><!-- START - This part is the explanation of the website. -->
     <div class="container">
-      <div class="diary-slider" dir="rtl">
-      	{% for idea in Ideas %}
-		{% if forloop.counter <= 12 %}
-        <div class="slide">
-          <figure class="thumbnail">
-            <img src="{% static 'main/assets/images/image-02.png' %}" alt="">
-          </figure>
-          <div class="description-box">
-            <h3 class="title"><a href="/{{idea.idea_slug}}">{{idea.idea_title}}</a></h3>
-            <p class="description">این {{idea.idea_series}} توسط {{idea.idea_publisher}} نوشته شده است، برای خوندنش میتونی اونو انتخاب کنی یا برو بعدی رو بزن و بعدیا رو ببین
+        <div class="col-sm-4 start-img">
+            <img src="{% static 'main/images/image01.png' %}" class="img-responsive" alt="">
+        </div>
+        <div class="col-sm-8 start-text">
+            <p>
+                خاطره نویسی کن , یادداشت های بامزه ای که داری رو بنویس و ما خیلی امن براتون نگهشون میداریم و اگه دوست
+                داشتی توی سایت بین دسته بندی هایی که داریم نشونش میدیم
             </p>
-          </div>
+            {% if user.is_authenticated %}
+            <h3><a href="/admin/main/myidea/add/">از اینجا شروع کن</a></h3>
+            {% else %}
+            <h3><a href="/register">از اینجا شروع کن</a></h3>
+            {% endif %}
         </div>
-        {% endif %}
-		{% endfor %}
+    </div>
+</section>
+
+
+
+<!--
+|--------------------------------------------------------------------------
+| !! Note : This div below creates a gorgeous line for us ( If you want to do so , all you need to do is to use .bg-hr class for a div tag )
+|--------------------------------------------------------------------------
+-->
+<div class="bg-hr"></div>
+
+<div class="clearfix"></div><!-- This tag is for elimination of Floats (Please don’t delete this) -->
+
+
+<section class="slider"><!-- START - This Section is the Sliders. -->
+    <div class="container">
+        <!--
+            |Each div below is one of our sliders :
+            |( all you need to do is to put one of the posts in the | FOR or FOREACH | and erase the rest)
+        -->
+        <div id="owl-example" class="owl-carousel">
+            {% for idea in Ideas %}
+                {% if forloop.counter <= 12 %}
+            <div class="item"><!-- START POST -->
+                <a href="/{{idea.idea_slug}}">
+                    <div class="col-sm-4 post-img">
+                        <img src="{% static 'main/images/image02.png' %}" class="img-responsive" alt="">
+                    </div>  
+                    <div class="col-sm-8">                                        
+                        <div class="post-text">
+                            <h4>{{idea.idea_title}}</h4>
+                        <p>این {{idea.idea_series}} توسط {{idea.idea_publisher}} نوشته شده است، برای خوندنش میتونی اونو انتخاب کنی یا برو بعدی و بعدیا رو ببین</p>
+                        </div>                                                              
+                    </div>
+                </a>
+            </div><!-- END POST -->
+                {% endif %}
+            {% endfor %}
+        </div>           
+    </div>
+</section><!-- END - This Section is the Slider. -->
+
+
+<!--
+|--------------------------------------------------------------------------
+| !! Note : This div creates a gorgeous line for us ( If you want to do so , all you need to do is to use bg-hr class for a div )
+|--------------------------------------------------------------------------
+-->
+<div class="bg-hr"></div>
+
+<div class="clearfix"></div><!-- This tag is for elimination of Floats (Please don’t delete this) -->
+
+<section class="category"><!-- Start - This section is related to our categories. -->
+    <div class="container">
+        <div class="row">
+            <h4 class="col-md-12 text-center where-is-it">چی کجاست ؟</h4>
+            <div class="col-md-5">
+                <img src="{% static 'main/images/image03.png' %}" class="img-responsive" alt="">
+            </div>
+            <div class="col-md-7">
+
+                <!--
+                   |Each div below is one of our post :
+                   |( all you need to do is to put one of the posts in the | FOR or FOREACH | and erase the rest)
+                -->
+                {% for cat in categories %}
+                <div class="col-sm-6"><!-- Start Cat -->
+                    <a href="{{cat.category_slug}}">
+                        <div class="item">
+                            <div class="item-img">
+                                <img src="{% static 'main/images/pattern/folder-icon.png' %}" alt="">
+                                <span></span>
+                            </div>
+                            <h4>{{cat.idea_category}}</h4>
+                            <p>30 یادداشت</p>
+                        </div>
+                    </a>
+                </div><!-- END Cat -->
+                {% endfor %}
+
+
+               
+            </div>
+            <h4 class="col-md-12 more text-center"><!-- more links -->
+                بیشتر از این ها میخوای، در
+                {% if user.is_authenticated %}
+                <a href="/admin/main/myidea/add/">اینجا</a>
+                {% else %}
+                <a href="/register">اینجا</a>
+                {% endif %}
+                بنویس
+            </h4>
         </div>
-      </div>
     </div>
-  </section>
-  <!-- end section 02 -->
+</section><!-- END - This section is related to our categories. -->
 
 
-<!-- section 03 -->
-  <section class="section section-03" dir="rtl">
-    <div class="container" >
+<div class="clearfix"></div><!-- This tag is for elimination of Floats (Please don’t delete this) -->
 
-      <!-- thumbnail -->
-      <figure class="thumbnail">
-        <img src="{% static 'main/assets/images/image-03.png' %}" alt="">
-      </figure>
-      <!-- end thumbnail -->
+<!-- **************** End Content ******************** -->
 
-      <!-- categories box -->
-      <div class="categories-box">
-        <h4 class="title">چی کجاست ؟</h4>
-        <ul class="categories-list">
-        {% for cat in categories %}
-          <li>
-            <a href="{{cat.category_slug}}">
-              <span class="icon"><img src="{% static 'main/assets/images/icon-folder.svg' %}" alt=""></span>
-              <span class="texts">
-                <span class="title">{{cat.idea_category}}</span>
-                <span class="count">۳۰ یادداشت</span>
-              </span>
-            </a>
-          </li>
-        {% endfor %}
-        </ul>
-        <p class="more-category">بیشتر از این ها هم<a href="#">اینجا</a>داریم</p>
-      </div>
-      <!-- end categories box -->
-    </div>
-  </section>
-  <!-- end section 03 -->
+
+
+<div class="donat-icon">
+    <a href="/donate/">
+        <img src="{% static 'main/images/donat4.svg' %}" alt="">
+    </a>
+</div>
+
 
   {% endblock %}  
 
