@@ -32,6 +32,7 @@ urlpatterns = [
     path('zarinpal/request/', views.send_request, name='request'),
     path('zarinpal/verify/', views.verify , name='verify'),
     path("donate/",views.donate,name="donate"),
+    path("removeIdea/",views.removeIdea,name="removeIdea"),
 
 
 ]

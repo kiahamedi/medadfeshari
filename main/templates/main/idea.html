@@ -17,13 +17,13 @@
                 -->
                 {% if user.is_authenticated %}
 					{% if user.id == idea.created_by.id %}
-
 						<form action="/editPost/" method="post">
-								{% csrf_token %}
-						    <input name="slug" id="slug" value="{{idea.idea_slug}}" hidden>
-								<input name="created_by" id="created_by" value="{{idea.created_by.id}}" hidden>
-								<input name="title" id="title" value="{{idea.idea_title}}" hidden>
-								<input name="conttent" id="conttent" value="{{idea.idea_conttent}}" hidden>
+							{% csrf_token %}
+					    	<input name="slug" id="slug" value="{{idea.idea_slug}}" hidden>
+							<input name="created_by" id="created_by" value="{{idea.created_by.id}}" hidden>
+							<input name="title" id="title" value="{{idea.idea_title}}" hidden>
+							<input name="conttent" id="conttent" value="{{idea.idea_conttent}}" hidden>
+						
 
 			                <div class="single-manager-box"><!-- author Panel -->
 			                    <div class="panel-gruop">
@@ -48,25 +48,25 @@
 		                                            <a href="/admin/main/myidea/add/">نوشتن داستان جدید</a>
                                         		</li>
 		                                        <li>
-		                                            <i class="fa fa-edit"></i>
-		                                            <button style="background:none;border:none;margin:0;padding:0;">ویرایش</button>
+			                                            <i class="fa fa-edit"></i>
+			                                            <button style="background:none;border:none;margin:0;padding:0;">ویرایش</button>
+	              								  </form>
 
 		                                        </li>
 		                                        <li>
-		                                            <i class="fa fa-trash"></i>
-		                                            <a href="#">حذف</a>
+		                                        	 <i class="fa fa-trash"></i>
+		                                        	<a href="#" data-target="#modal1" data-toggle="modal">حذف</a>
 		                                        </li>
-		                                        <li>
+		                                        <!--<li>
 		                                            <i class="fa fa-envelope"></i>
 		                                            <a href="#">پیام به مدیریت</a>
-		                                        </li>
+		                                        </li>-->
 		                                    </ul>
 		                                </div>
 		                            </div>
 		                        </div>
 		                    </div>
 		                </div>
-	                </form>
                 	{% endif %}
 				{% endif %}
 				<!-- author Panel -->

@@ -49,3 +49,24 @@
         </div>
     </div>
 </footer>
+
+
+    <div id="modal1" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="text-center">آیا مطمن هستید که می خواهید حذف کنید ؟</h5>
+                </div>
+                <div class="modal-body text-center">
+                    <form action="/removeIdea/" method="post">
+                      {% csrf_token %}
+                        <input name="slugpost" id="slugpost" value="{{idea.idea_slug}}" hidden>
+                        <input name="create" id="create" value="{{idea.created_by.id}}" hidden>
+                        <input type="submit" class="btn btn-success" value="آره حذف کن">
+                        <button class="btn btn-danger" data-dismiss="modal">نه وللش</button>
+                    </form>
+                </div>    
+
+            </div>                
+        </div>
+    </div>

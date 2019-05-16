@@ -103,7 +103,7 @@ def editPost(request):
 			print(request.POST)
 			slug_edit = request.POST.get("slug")
 			slug_title = request.POST.get("title")
-			
+			slug_content = request.POST.get("conttent")
 			print("url"+str(slug_edit)+"title:"+str(slug_title)+"content"+str(slug_content))
 			return render(request,"main/editPost.html",
 			context={"slugedit":slug_edit,
@@ -253,3 +253,19 @@ def donate(request):
 
 def index(request):
     return render(request, 'node-chat-app/public/index.html', {})
+
+def removeIdea(request):
+	if request.method == "POST":
+		slugidea = request.POST.get("slugpost")
+		create = request.POST.get("create")
+
+		user_idea = MyIdea.objects.get(idea_slug = slugidea)
+		useridea = user_idea.created_by.id
+		if int(useridea) == int(create):
+			user_idea.delete()
+			print("delete post")
+			messages.success(request,_("پست مورد نظر شما پاک شد"))
+			return redirect("main:homepage")
+		else:
+			messages.error(request,_("نوشته حذف نشد"))
+			return redirect("main:homepage")
