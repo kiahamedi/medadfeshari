@@ -46,7 +46,7 @@
 		font-size:20px;		
 	}
 	.slider .post-text p{
-		margin-bottom: 85px;
+		margin-bottom: 65px;
 		font-size:17px;
 		line-height: 40px;
 	}
@@ -67,7 +67,8 @@
 		padding:10px 40px;
 	}
 	.slider .post-text p{
-		margin-bottom: 130px;
+		margin-bottom: 110px;
+		font-size:16px;
 	}
     .donat .supporters table{
     font-size: 11px;

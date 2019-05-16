@@ -106,12 +106,12 @@
                                         </li>
                                         <li>
                                             <i class="fa fa-trash"></i>
-                                            <a href="#">حذف</a>
+                                            <a href="#" data-target="#modal1" data-toggle="modal">حذف</a>
                                         </li>
-                                        <li>
+                                        <!-- <li>
                                             <i class="fa fa-envelope"></i>
-                                            <a href="#">پیام به نویسنده</a>
-                                        </li>
+                                            <a href="#">هرچی دلت میخاد</a>
+                                        </li> -->
                                     </ul>
                                 </div>
                             </div>
@@ -278,7 +278,26 @@
             </div>
         </div>
     </div>
-</footer>
+</footer>        
+
+/********** Modal box Delete ***********/
+
+    <div id="modal1" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="text-center">آیا مطمن هستید که می خواهید حذف کنید ؟</h5>
+                </div>
+                <div class="modal-body text-center">
+                    <a href="index.html" class="btn btn-success">آره حذف کن</a>
+                    <button class="btn btn-danger" data-dismiss="modal">نه وللش</button>
+                </div>    
+                
+            </div>                
+        </div>
+    </div>
+
+/********** Modal box Delete ***********/
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="js/jquery.js"></script>
