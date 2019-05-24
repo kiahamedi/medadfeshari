@@ -11,7 +11,6 @@ constantly==15.1.0
 daphne==2.2.5
 defusedxml==0.6.0
 Django==2.1.5
-django-allauth==0.39.1
 django-crispy-forms==1.7.2
 django-recaptcha2==1.4.1
 django-tinymce4-lite==1.7.4
