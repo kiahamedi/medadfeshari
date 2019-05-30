@@ -544,8 +544,8 @@ footer .footer-bottom h6 {
     margin: 0 auto;
 }
 
-.single-page .content .share {
-    margin-top: 15px;
+.single-page .content .share {    
+    margin: 15px 0;
 }
 
 .single-page .content .share h4 {
@@ -605,7 +605,63 @@ footer .footer-bottom h6 {
 .single-page .content .share ul li .telegram:hover {
     background: #1ab7ea;
 }
+.single-page .content .comments{
+    width: 100%;
+    height: auto;
+    background: #fff;
+    display: inline-block;
+    margin: 10px 0;
+}
+.single-page .content .comments .send{
+    padding: 10px 25px;
+    margin: 10px 0;
+}
+.single-page .content .comments ul{
+    padding: 0;
+    margin: 15px 0;
+    list-style: none;
+}
 
+.single-page .content .comments > ul > li{
+    width: 100%;
+    height: auto;
+    padding: 10px 5px;
+    margin: 0;
+    border: 1px solid #fafafa;
+    box-shadow: 4px 1px 4px 1px #eee;
+    background: #fcfcfc;
+    border-radius: 8px;
+}
+.single-page .content .comments > ul > li > h4{
+    font-size: 15px;
+    background: url('../images/pattern/orange1.png');
+    display: inline-block;
+    padding: 7px 20px;
+    background-size: cover;
+}
+.single-page .content .comments > ul > li p{
+    width: 100%;
+    background: url('../images/pattern/bg-text.png');
+    background-size:100% 100%;
+    padding: 10px;
+    font-size: 13px;
+    line-height: 28px
+
+}
+.single-page .content .comments > ul > li .answer{
+    margin-right: 50px;
+}
+.single-page .content .comments > ul > li .answer-btn{
+    margin: 10px;
+    padding: 7px 20px;
+}
+.single-page .content .comments > ul > li > ul li h4{
+    font-size: 15px;
+    background: url('../images/pattern/white2.png');
+    display: inline-block;
+    padding: 7px 20px;
+    background-size: cover;
+}
 .ready {
     font-size: 45px;
 
