@@ -269,3 +269,8 @@ def removeIdea(request):
 		else:
 			messages.error(request,_("نوشته حذف نشد"))
 			return redirect("main:homepage")
+
+
+def addcomments(request):
+	if request.method == "POST":
+		return redirect("main:homepage")

@@ -34,6 +34,7 @@ urlpatterns = [
     path('zarinpal/verify/', views.verify , name='verify'),
     path("donate/",views.donate,name="donate"),
     path("removeIdea/",views.removeIdea,name="removeIdea"),
+    path("addcomments/",views.addcomments,name="addcomments"),
 
 
 ]
