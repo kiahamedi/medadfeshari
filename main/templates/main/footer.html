@@ -75,16 +75,28 @@
 <!--********** Modal box Add Comment ***********-->
     <div id="modal2" class="modal fade">
         <div class="modal-dialog">
+            
             <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="text-center">دیدگاه خودت رو برامون بنویس</h4>
-                </div>
-                <div class="modal-body text-center">
-                    <form action="index.html" method="post">
-                        <textarea name="" class="form-control" id="" cols="30" rows="10">متن دیدگاه شما</textarea>
-                        <input type="text" class="btn btn-success btn-lg" style="margin:10px;" value="ارسال دیدگاه">
-                    </form>
-                </div>    
+                    <div class="modal-header">
+                        <h4 class="text-center">دیدگاه خودت رو برامون بنویس</h4>
+                    </div>
+                    <div class="modal-body text-center">
+                    {% if user.is_authenticated %}
+                        <form action="/addcomments/" method="post">
+                            {% csrf_token %}
+                            <input name="post_id" id="post_id" value="{{idea.idea_slug}}" hidden>
+                            <input name="user_name" id="user_name" value="{{user}}" hidden>
+                            <input name="post_title" id="post_title" value="{{idea.idea_title}}" hidden>
+
+                            <textarea name="comment" id="comment" placeholder="متن دیدگاه شما" class="form-control" id="" cols="30" rows="10"></textarea>
+                            <button class="btn btn-success btn-lg" style="margin:10px;">ارسال دیدگاه</button>
+                        </form>
+                    {% else %}
+                        <form action="/login/">
+                            <button href="/login/" class="btn btn-success btn-lg" style="margin:10px;">ورود به حساب کاربری</button>
+                        </form>
+                    {% endif %}
+                    </div>
             </div>
         </div>
     </div>
@@ -98,10 +110,24 @@
                     <h4 class="text-center">به این دیدگاه پاسخ بده</h4>
                 </div>
                 <div class="modal-body text-center">
-                    <form action="index.html" method="post">
-                        <textarea name="" class="form-control" id="" cols="30" rows="10">متن دیدگاه شما</textarea>
-                        <input type="text" class="btn btn-success btn-lg" style="margin:10px;" value="ارسال دیدگاه">
+                    {% if user.is_authenticated %}
+                    <form action="/replaycomments/" method="post">
+                        {% csrf_token %}
+
+
+                        <input name="post_id" id="post_id" value="{{idea.idea_slug}}" hidden>
+                        <input name="user_name" id="user_name" value="{{user}}" hidden>
+                        <input name="post_title" id="post_title" value="{{idea.idea_title}}" hidden>
+                        <input name="reply_id" id="reply_id" value="{{comment.comment}}" hidden>
+
+                        <textarea name="comment" id="comment" placeholder="متن دیدگاه شما" class="form-control" id="" cols="30" rows="10"></textarea>
+                        <button class="btn btn-success btn-lg" style="margin:10px;">ارسال دیدگاه</button>
                     </form>
+                    {% else %}
+                        <form action="/login/">
+                            <button href="/login/" class="btn btn-success btn-lg" style="margin:10px;">ورود به حساب کاربری</button>
+                        </form>
+                    {% endif %}
                 </div>    
             </div>
         </div>

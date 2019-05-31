@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.shortcuts import render, redirect
-from .models import MyIdea, IdeaSeries, IdeaCategory , Donate
+from .models import MyIdea, IdeaSeries, IdeaCategory , Donate , Comments
 from django.http import HttpResponse
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, logout, authenticate
@@ -231,12 +231,13 @@ def single_slug(request,single_slug):
 		ideas_from_series = MyIdea.objects.filter(idea_series__idea_series=this_idea.idea_series).order_by("idea_published")
 
 		this_idea_idx = list(ideas_from_series).index(this_idea)
-
+		all_comments = Comments.objects.all()
 		return render(request,
 							"main/idea.html",
 							{"idea":this_idea,
 							 "sidebar": ideas_from_series,
-							 "this_idea_idx":this_idea_idx})
+							 "this_idea_idx":this_idea_idx,
+							 "all_comments":all_comments})
 
 	return HttpResponse(str(single_slug) + " dose not correspomd to anything.")
 
@@ -273,4 +274,46 @@ def removeIdea(request):
 
 def addcomments(request):
 	if request.method == "POST":
+		post_id = request.POST.get("post_id")
+		user_name = request.POST.get("user_name")
+		post_title = request.POST.get("post_title")
+		comment = request.POST.get("comment")
+		print(post_id,user_name,post_title,comment)
+
+		add_comments = Comments()
+		add_comments.post_id = post_id
+		add_comments.user_name = user_name
+		add_comments.post_title = post_title
+		add_comments.comment = comment
+		add_comments.reply_id = "0"
+		add_comments.save()
+		messages.success(request,_("دیدگاه شما اضافه شد"))
+		return redirect("/"+post_id)
+	else:
+		messages.error(request,_("مشکلی رخ داد با توسعه دهنده تماس بگیرید"))
 		return redirect("main:homepage")
+
+
+def replaycomments(request):
+	if request.method == "POST":
+		post_id = request.POST.get("post_id")
+		user_name = request.POST.get("user_name")
+		post_title = request.POST.get("post_title")
+		reply_id = request.POST.get("reply_id")
+		comment = request.POST.get("comment")
+		#print(post_id,user_name,post_title,comment)
+		add_comments = Comments()
+		add_comments.post_id = post_id
+		add_comments.user_name = user_name
+		add_comments.post_title = post_title
+		add_comments.comment = comment
+		add_comments.reply_id = reply_id
+		add_comments.save()
+		messages.success(request,_("دیدگاه شما اضافه شد"))
+		return redirect("/"+post_id)
+	else:
+		messages.error(request,_("مشکلی رخ داد با توسعه دهنده تماس بگیرید"))
+		return redirect("main:homepage")
+
+
+

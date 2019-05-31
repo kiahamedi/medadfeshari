@@ -35,6 +35,7 @@ urlpatterns = [
     path("donate/",views.donate,name="donate"),
     path("removeIdea/",views.removeIdea,name="removeIdea"),
     path("addcomments/",views.addcomments,name="addcomments"),
+    path("replaycomments/",views.replaycomments,name="replaycomments"),
 
 
 ]
