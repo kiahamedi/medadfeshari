@@ -71,3 +71,18 @@ class Donate(models.Model):
 
 	def __str__(self): 
 		return self.name_donate+" | "+self.amount_donate
+
+
+
+class Comments(models.Model):
+	post_id = models.CharField(max_length=200)
+	post_title = models.CharField(max_length=200)
+	reply_id = models.CharField(max_length=200)
+	user_name = models.CharField(max_length=200)
+	comment = models.CharField(max_length=200)
+
+	class Meta:
+		verbose_name_plural = _("دیدگاه ها")
+
+	def __str__(self): 
+		return self.user_name+" | "+self.post_title
