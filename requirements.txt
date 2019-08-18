@@ -10,7 +10,7 @@ chardet==3.0.4
 constantly==15.1.0
 daphne==2.2.5
 defusedxml==0.6.0
-Django==2.1.9
+Django==2.1.11
 django-crispy-forms==1.7.2
 django-recaptcha2==1.4.1
 django-tinymce4-lite==1.7.4
