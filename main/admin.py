@@ -7,21 +7,20 @@ from django.db import models
 
 # Register your models here.
 class MyIdeaAdmin(admin.ModelAdmin):
-
+	list_display = ("idea_title","idea_series","idea_slug","idea_publisher","idea_published")
+	list_filter = ("idea_series","idea_publisher")
+	search_fields = ("idea_title","idea_slug","idea_publisher")
 	fieldsets = [
 		("Title/date",{"fields":["idea_title","idea_published"]}),
 		("URL",{"fields":["idea_slug","idea_publisher"]}),
 		("Series",{"fields":["idea_series"]}),
 		("Content",{"fields":["idea_conttent"]})
 	]
-
 	readonly_fields=('idea_slug', )
-
 	formfield_overrides = {
 		models.TextField: {'widget': TinyMCE()}
 	}
-
-	def save_model(self, request, obj, form, change): 
+	def save_model(self, request, obj, form, change):
 		instance = form.save(commit=False)
 		if not hasattr(instance,'created_by'):
 			instance.created_by = request.user
@@ -30,8 +29,7 @@ class MyIdeaAdmin(admin.ModelAdmin):
 		form.save_m2m()
 		return instance
 
-
-	def save_formset(self, request, form, formset, change): 
+	def save_formset(self, request, form, formset, change):
 
 		def set_user(instance):
 			if not instance.created_by:
@@ -52,9 +50,6 @@ class MyIdeaAdmin(admin.ModelAdmin):
 
 admin.site.register(IdeaSeries)
 admin.site.register(IdeaCategory)
-
 admin.site.register(MyIdea,MyIdeaAdmin)
-
 admin.site.register(Donate)
-
 admin.site.register(Comments)
