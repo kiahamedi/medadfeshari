@@ -6,6 +6,8 @@ from django.db import models
 
 
 # Register your models here.
+
+# Costum Idea Panel
 class MyIdeaAdmin(admin.ModelAdmin):
 	list_display = ("idea_title","idea_series","idea_slug","idea_publisher","idea_published")
 	list_filter = ("idea_series","idea_publisher")
@@ -44,12 +46,28 @@ class MyIdeaAdmin(admin.ModelAdmin):
 			return instances
 		else:
 			return formset.save()
-
-
-
-
-admin.site.register(IdeaSeries)
-admin.site.register(IdeaCategory)
 admin.site.register(MyIdea,MyIdeaAdmin)
-admin.site.register(Donate)
-admin.site.register(Comments)
+
+# Costum Idea Series Panel
+class CustomIdeaSeriesPanel(admin.ModelAdmin):
+	list_display = ("idea_series","idea_category","series_summary")
+	list_filter = ("idea_series","idea_category")
+admin.site.register(IdeaSeries,CustomIdeaSeriesPanel)
+
+# Costum Idea Cat Panel
+class CustomIdeaCategoryPanel(admin.ModelAdmin):
+	list_display = ("idea_category","category_summery","category_slug")
+	list_filter = ("idea_category","category_summery")
+admin.site.register(IdeaCategory,CustomIdeaCategoryPanel)
+
+# Costum Donate Panel
+class CustomDonatePanel(admin.ModelAdmin):
+	list_display = ("name_donate","email_donate","amount_donate","transaction_code_donate","transaction_status_donate")
+	search_fields = ("name_donate","email_donate","amount_donate")
+admin.site.register(Donate,CustomDonatePanel)
+
+# Costum Comments Panel
+class CustomCommentsPanel(admin.ModelAdmin):
+	list_display = ("user_name","post_title","post_id","reply_id","comment")
+	search_fields = ("user_name","post_title","post_id","reply_id")
+admin.site.register(Comments,CustomCommentsPanel)
