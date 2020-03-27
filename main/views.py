@@ -26,67 +26,6 @@ email = 'kia.arta9793@gmail.com'  # Optional
 mobile = '09145480798'  # Optional
 CallbackURL = 'http://localhost:8000/zarinpal/verify/' # Important: need to edit for realy server.
 
-def send_request(request):
-	amount_input = request.POST.get("amount")
-	name_input = request.POST.get("nameinput")
-	email_input = request.POST.get("emailinput")
-	if amount_input == "" or name_input == "" or email_input == "":
-		messages.warning(request, _("پر کردن تمامی فیلدها الزامی است"))
-		return render(request, 'main/donate.html', {})
-
-	result = client.service.PaymentRequest(MERCHANT, amount_input, description, email, mobile, CallbackURL)
-	if result.Status == 100:
-		userDonate = Donate()
-		userDonate.name_donate = request.POST.get("nameinput")
-		userDonate.email_donate = request.POST.get("emailinput")
-		userDonate.amount_donate = request.POST.get("amount")
-		userDonate.transaction_code_donate = "str(result.RefID)"
-		userDonate.transaction_status_donate = "str(result.Status)"
-		userDonate.save()
-		return redirect('https://www.zarinpal.com/pg/StartPay/' + str(result.Authority))
-	else:
-		#return HttpResponse('Error code: ' + str(result.Status))
-		messages.warning(request, _("کمترین مقدار حمایت باید 100 تومان باشد"))
-		return render(request, 'main/donate.html', {})
-
-def verify(request):
-	if request.GET.get('Status') == 'OK':
-		userDonate = Donate.objects.latest('id')
-		amount_input = userDonate.amount_donate
-		#amount_input = request.POST.get("amount")
-		result = client.service.PaymentVerification(MERCHANT, request.GET['Authority'], amount_input)
-		if result.Status == 100:
-			#return HttpResponse('Transaction success.\nRefID: ' + str(result.RefID))
-			userDonate = Donate.objects.latest('id')
-			userDonate.transaction_code_donate = str(result.RefID)
-			userDonate.transaction_status_donate = str(result.Status)
-			userDonate.save()
-			messages.success(request, _("ممنون از حمایت شما دوست گرامی\nکد تراکنش شما: " + str(result.RefID)))
-			return render(request, 'main/donate.html', {})
-		elif result.Status == 101:
-			#return HttpResponse('Transaction submitted : ' + str(result.Status))
-			userDonate = Donate.objects.latest('id')
-			userDonate.transaction_code_donate = str(result.RefID)
-			userDonate.transaction_status_donate = str(result.Status)
-			userDonate.save()
-			messages.success(request, _("تراکنش شما انجام شد: " + str(result.Status)))
-			return render(request, 'main/donate.html', {})
-		else:
-			#return HttpResponse('Transaction failed.\nStatus: ' + str(result.Status))
-			userDonate = Donate.objects.latest('id')
-			#userDonate.transaction_code_donate = str(result.RefID)
-			userDonate.transaction_status_donate = str(result.Status)
-			userDonate.save()
-			messages.error(request, _("تراکنش شما ناموفق بود: " + str(result.Status)))
-			return render(request, 'main/donate.html', {})
-	else:
-		#return HttpResponse('Transaction failed or canceled by user')
-		userDonate = Donate.objects.latest('id')
-		userDonate.transaction_code_donate = "str(result.RefID)"
-		userDonate.transaction_status_donate = "canceled"
-		userDonate.save()
-		messages.error(request, _("تراکنش شما انجام نشد یا توسط خودتان لغو گردید"))
-		return render(request, 'main/donate.html', {})
 
 
 def homepage(request):
@@ -121,7 +60,6 @@ def editPost(request):
 def editPostDone(request):
 	current_user = request.user
 	if request.method == "POST":
-
 		id_post = request.POST.get("slugedit")
 		title_post = request.POST.get("slugtitle")
 		content_post = request.POST.get("area2")
@@ -131,11 +69,8 @@ def editPostDone(request):
 		myPost.save()
 		messages.info(request, ("پست مورد نظر شما ویرایش گردید"))
 		return redirect("main:homepage")
-
 	else:
 		messages.info(request, ("انگار مشکلی پیش اومد"))
-
-
 
 
 
@@ -151,8 +86,6 @@ def register(request):
 			#user.is_staff = True
 			login(request, user)
 			messages.info(request, _("You are now logged in as ") + username)
-
-
 			return redirect("main:homepage")
 		else:
 			for msg in form.error_messages:
@@ -212,7 +145,6 @@ def single_slug(request,single_slug):
 			#print(part_one)
 			#series_urls[m] = part_one.idea_slug
 			series_urls[m] = part_one.idea_slug
-
 			#print(part_one.idea_slug)
 			#print(part_one)
 			#series_urls[m] = m.idea_series.replace(" ","-")
@@ -246,10 +178,8 @@ def backstage(request):
 	return render(request, 'main/Backstage.html', {})
 
 def donate(request):
-
 	query_results = Donate.objects.all()
 	print(query_results)
-
 	return render(request, 'main/donate.html', context={"alldonate":query_results})
 
 def index(request):
@@ -317,3 +247,81 @@ def replaycomments(request):
 
 
 
+def send_request(request):
+	amount_input = request.POST.get("amount")
+	name_input = request.POST.get("nameinput")
+	email_input = request.POST.get("emailinput")
+	if amount_input == "" or name_input == "" or email_input == "":
+		messages.warning(request, _("پر کردن تمامی فیلدها الزامی است"))
+		return render(request, 'main/donate.html', {})
+
+	result = client.service.PaymentRequest(MERCHANT, amount_input, description, email, mobile, CallbackURL)
+	if result.Status == 100:
+		userDonate = Donate()
+		userDonate.name_donate = request.POST.get("nameinput")
+		userDonate.email_donate = request.POST.get("emailinput")
+		userDonate.amount_donate = request.POST.get("amount")
+		userDonate.transaction_code_donate = str(result.Authority)
+		userDonate.transaction_status_donate = "درحال انتظار"
+		userDonate.save()
+		return redirect('https://www.zarinpal.com/pg/StartPay/' + str(result.Authority))
+	else:
+		#return HttpResponse('Error code: ' + str(result.Status))
+		messages.warning(request, _("کمترین مقدار حمایت باید 100 تومان باشد"))
+		return render(request, 'main/donate.html', {})
+
+def verify(request):
+	if request.GET.get('Status') == 'OK':
+		Authority = request.GET.get('Authority')
+		try:
+			userDonate = Donate.objects.get(transaction_code_donate=str(Authority))
+		except:
+			content = {'message':' اطلاعات برگشتی اشتباه است ' , "authorization": False }
+			response = HttpResponse(json.dumps(content),status=400, content_type='application/json')
+			response["Access-Control-Allow-Origin"] = "*"
+			response["Access-Control-Allow-Methods"] = "POST"
+			response["Access-Control-Max-Age"] = "1000"
+			response["Access-Control-Allow-Headers"] = "*"
+			return response
+
+		amount_input = userDonate.amount_donate
+		#amount_input = request.POST.get("amount")
+		result = client.service.PaymentVerification(MERCHANT, request.GET['Authority'], amount_input)
+		if result.Status == 100:
+			#return HttpResponse('Transaction success.\nRefID: ' + str(result.RefID))
+			userDonate.transaction_code_donate = str(result.RefID)
+			userDonate.transaction_status_donate = "پرداخت شده"
+			userDonate.save()
+			messages.success(request, _("ممنون از حمایت شما دوست گرامی\nکد تراکنش شما: " + str(result.RefID)))
+			return render(request, 'main/donate.html', {})
+		elif result.Status == 101:
+			#return HttpResponse('Transaction submitted : ' + str(result.Status))
+			userDonate.transaction_code_donate = str(result.RefID)
+			userDonate.transaction_status_donate = "پرداخت شده"
+			userDonate.save()
+			messages.success(request, _("تراکنش شما انجام شد: " + str(result.Status)))
+			return render(request, 'main/donate.html', {})
+		else:
+			#return HttpResponse('Transaction failed.\nStatus: ' + str(result.Status))
+			#userDonate.transaction_code_donate = str(result.RefID)
+			userDonate.transaction_status_donate = "پرداخت ناموفق"
+			userDonate.save()
+			messages.error(request, _("تراکنش شما ناموفق بود: " + str(result.Status)))
+			return render(request, 'main/donate.html', {})
+	else:
+		Authority = request.GET.get('Authority')
+		try:
+			userDonate = Donate.objects.get(transaction_code_donate=str(Authority))
+		except:
+			content = {'message':' اطلاعات برگشتی اشتباه است ' , "authorization": False }
+			response = HttpResponse(json.dumps(content),status=400, content_type='application/json')
+			response["Access-Control-Allow-Origin"] = "*"
+			response["Access-Control-Allow-Methods"] = "POST"
+			response["Access-Control-Max-Age"] = "1000"
+			response["Access-Control-Allow-Headers"] = "*"
+			return response
+		userDonate.transaction_code_donate = str(Authority)
+		userDonate.transaction_status_donate = "انصراف پرداخت"
+		userDonate.save()
+		messages.error(request, _("تراکنش شما انجام نشد یا توسط خودتان لغو گردید"))
+		return render(request, 'main/donate.html', {})
