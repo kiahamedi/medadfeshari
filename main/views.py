@@ -14,7 +14,7 @@ import json
 
 from django.shortcuts import redirect
 from zeep import Client
-
+import smtplib, ssl
 
 
 
@@ -25,6 +25,35 @@ description = "توضیحات مربوط به تراکنش را در این قس
 email = 'kia.arta9793@gmail.com'  # Optional
 mobile = '09145480798'  # Optional
 CallbackURL = 'http://localhost:8000/zarinpal/verify/' # Important: need to edit for realy server.
+
+
+# Send Email Details (Not Secure but for now it is ok)
+## TODO: USE Settings for config sender_email
+port = 587  # For starttls
+smtp_server = "smtp.gmail.com"
+sender_email = "SENDER GMAIL"
+password = "PASSWORD GMAIL"
+
+def sendMailRegister(user,email):
+	#Send Email After Register
+	receiver_email = email
+	message = """\
+Subject: Medadfeshari
+
+Hi {}
+Your registration is complete
+You can now start writing from the following link:
+http://medadfeshari.ir/adminmain/myidea/add/
+
+Regards Kia Hamedi
+""".format(user)
+	context = ssl.create_default_context()
+	with smtplib.SMTP(smtp_server, port) as server:
+	    server.ehlo()
+	    server.starttls(context=context)
+	    server.ehlo()
+	    server.login(sender_email, password)
+	    server.sendmail(sender_email, email, message)
 
 
 
@@ -79,6 +108,10 @@ def register(request):
 		form = NewUserForm(request.POST)
 		if form.is_valid():
 			user = form.save()
+
+			#send email after register
+			sendMailRegister(user.username,user.email)
+
 			username = form.cleaned_data.get('username')
 			messages.success(request,_("New Account Created: ") + username)
 			basic_user = Group.objects.get(name='basicUser')
@@ -86,6 +119,7 @@ def register(request):
 			#user.is_staff = True
 			login(request, user)
 			messages.info(request, _("You are now logged in as ") + username)
+
 			return redirect("main:homepage")
 		else:
 			for msg in form.error_messages:
@@ -303,7 +337,7 @@ def verify(request):
 			return render(request, 'main/donate.html', {})
 		else:
 			#return HttpResponse('Transaction failed.\nStatus: ' + str(result.Status))
-			#userDonate.transaction_code_donate = str(result.RefID)
+			userDonate.transaction_code_donate = str(result.RefID)
 			userDonate.transaction_status_donate = "پرداخت ناموفق"
 			userDonate.save()
 			messages.error(request, _("تراکنش شما ناموفق بود: " + str(result.Status)))
