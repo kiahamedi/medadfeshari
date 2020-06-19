@@ -1,19 +1,62 @@
 {% extends "main/header.html" %}
-
 {% block content %}
 
 <!-- **************** Start Content ******************** -->
 
 <section class="register"><!-- START - This section is related to our Register Form. -->
     <div class="container">
-        <form method="POST"><!-- FORM -->
-            {% csrf_token %}
-            {{form.as_p}}
-            <button class="btn" type="submit">ثبت نام</button>
 
+        <form method="POST"><!-- FORM -->
+          {% csrf_token %}
+            <div class="col-md-12"><!-- Username -->
+                <div class="form-group">
+                    <label for="#">نام کاربری</label>
+                    {{ form.username }}
+                </div>
+                <div class="col-md-12 alert alert-warning fade in"><!-- This is warning alert -->
+                    <a href="#" class="close" data-dismiss="alert" arial-lable="close">&times;</a>
+                    <ul>
+                        <li>الزامی. 150 کاراکتر یا کمتر. فقط شامل حروف، اعداد، و علامات @/./+/-/_</li>
+                    </ul>
+                </div>
+            </div><!-- Username -->
+            <div class="col-md-12"><!-- Email -->
+                <div class="form-group"><!-- Email -->
+                    <label for="#">ایمیل</label>
+                    {{ form.email }}
+                </div>
+                <div class="col-md-12 alert alert-warning fade in"><!-- This is warning alert -->
+                    <a href="#" class="close" data-dismiss="alert" arial-lable="close">&times;</a>
+                    <ul>
+                        <li>حتما با فرمت صحیح ایمیلتان را وارد کنید</li>
+                    </ul>
+                </div>
+            </div><!-- Email -->
+            <div class="col-md-12"><!-- Password -->
+                <div class="form-group ">
+                    <label for="#">گذرواژه</label>
+                    {{ form.password1 }}
+                </div>
+                <div class="col-md-12 alert alert-warning fade in"><!-- This is warning alert -->
+                    <a href="#" class="close" data-dismiss="alert" arial-lable="close">&times;</a>
+                    <ul>
+                        <li>رمز عبور شما نمی‌تواند شبیه سایر اطلاعات شخصی شما باشد.</li>
+                        <li>رمز عبور شما می‌بایست حداقل از 8 حرف تشکیل شده باشد.</li>
+                        <li>رمز شما نمی تواند از عبارات معروف باشد.</li>
+                        <li>رمز شما نمی تواند کلا عدد باشد</li>
+                    </ul>
+                </div>
+
+            </div><!-- Password -->
+            <div class="col-md-12"><!-- Confirm Password -->
+                <div class="form-group">
+                    <label for="#">تایید گذرواژه</label>
+                    {{ form.password2 }}
+                </div>
+            </div><!-- Confirm Password -->
             <div class="col-md-12"><!-- Ssubmit Form -->
                 <div class="form-group">
-                   
+                    <input type="submit" class="btn btn-success btn-md" value="ثبت نام">
                     <h5>
                         اگر شما قبلا یک حساب کاربری دارید
                         <a href="/login">وارد شوید</a>
@@ -28,4 +71,4 @@
 
 <!-- **************** End Content ******************** -->
 
-{% endblock %} 
+{% endblock %}

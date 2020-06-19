@@ -6,10 +6,18 @@
 
 <section class="login"><!-- START - This section is related to our Login Form. -->
     <div class="container">
+
         <form method="POST">
-            {% csrf_token %}
-			{{form.as_p}}
-            <button class="btn" type="submit">ورود</button><!-- Submit Button -->
+          {% csrf_token %}
+            <div class="form-group"><!-- Username -->
+                <label for="#">نام کاربری</label>
+                  {{form.username}}
+            </div>
+            <div class="form-group"><!-- Email -->
+                <label for="#">گذرواژه </label>
+                {{form.password}}
+            </div>
+            <submit class="btn btn-success md">ورود</submit><!-- Submit Button -->
             <h5>اگر حساب کاربری ندارید
                 <a href="/register">ثبت نام </a>
                 کنید
