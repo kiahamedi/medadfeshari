@@ -110,7 +110,7 @@ def register(request):
 			user = form.save()
 
 			#send email after register
-			sendMailRegister(user.username,user.email)
+			#sendMailRegister(user.username,user.email)
 
 			username = form.cleaned_data.get('username')
 			messages.success(request,_("New Account Created: ") + username)
