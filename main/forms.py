@@ -11,12 +11,12 @@ from snowpenguin.django.recaptcha2.widgets import ReCaptchaWidget
 
 class NewUserForm(UserCreationForm):
 	email = forms.EmailField(required=True)
-	#captcha = ReCaptchaField(widget=ReCaptchaWidget())
+	captcha = ReCaptchaField(widget=ReCaptchaWidget())
 
 	class Meta:
 		model = User
 		fields = ("username","email","password1","password2")
-		
+
 
 	def save(self,commit=True):
 		user = super(NewUserForm,self).save(commit=False)

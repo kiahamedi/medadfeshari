@@ -12,6 +12,7 @@
                 <div class="form-group">
                     <label for="#">نام کاربری</label>
                     {{ form.username }}
+
                 </div>
                 <div class="col-md-12 alert alert-warning fade in"><!-- This is warning alert -->
                     <a href="#" class="close" data-dismiss="alert" arial-lable="close">&times;</a>
@@ -54,8 +55,21 @@
                     {{ form.password2 }}
                 </div>
             </div><!-- Confirm Password -->
+
+            <!-- captcha -->
+            <div class="col-md-12">
+                <div class="form-group">
+                    <hr>
+                    <label for="#">تایید ریکپچا</label>
+                    {{ form.captcha }}
+                </div>
+            </div><!-- captcha -->
+
+          </div>
+
             <div class="col-md-12"><!-- Ssubmit Form -->
                 <div class="form-group">
+
                     <input type="submit" class="btn btn-success btn-md" value="ثبت نام">
                     <h5>
                         اگر شما قبلا یک حساب کاربری دارید
