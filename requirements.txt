@@ -20,7 +20,7 @@ idna==2.8
 incremental==17.5.0
 isodate==0.6.0
 jsmin==2.2.2
-lxml==4.3.3
+lxml==4.6.3
 oauthlib==3.0.1
 PyHamcrest==1.9.0
 python3-openid==3.1.0
